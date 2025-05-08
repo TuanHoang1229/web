@@ -39,3 +39,37 @@ if st.button("Tạo mật khẩu"):
         with open("saved_passwords.txt", "a") as f:
             f.write(hashed + "\n")
         st.success("Đã lưu mật khẩu (dạng SHA-256) vào file.")
+
+
+def calculate_strength(password):
+    strength = 0
+    if len(password) >= 8:
+        strength += 1
+    if any(c.islower() for c in password):
+        strength += 1
+    if any(c.isupper() for c in password):
+        strength += 1
+    if any(c.isdigit() for c in password):
+        strength += 1
+    if any(c in string.punctuation for c in password):
+        strength += 1
+    return strength
+
+def password_strength_text(score):
+    if score <= 2:
+        return "❌ Yếu", "red"
+    elif score == 3 or score == 4:
+        return "⚠️ Trung bình", "orange"
+    else:
+        return "✅ Mạnh", "green"
+
+st.title("🔐 Kiểm tra độ mạnh của mật khẩu")
+
+password = st.text_input("Nhập mật khẩu:", type="password")
+
+if password:
+    score = calculate_strength(password)
+    strength_text, color = password_strength_text(score)
+    
+    st.markdown(f"**Đánh giá:** <span style='color:{color}'>{strength_text}</span>", unsafe_allow_html=True)
+    st.progress(score * 20)
