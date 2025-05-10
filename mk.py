@@ -6,54 +6,42 @@ st.set_page_config(page_title="Tin Học Online", layout="wide")
 # --- Logo & Tiêu đề ---
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
 
-# --- Danh sách chuyên mục ---
-menu_items = [
-    ("🏠 Trang chủ", 0),
-    ("🔑 Kiểm tra mật khẩu", 1),
-    ("🌐 Thiết kế Web cơ bản", 2),
-    ("🔐 An toàn thông tin", 3),
-    ("📂 Kho tài liệu", 4),
-    ("🧠 Trắc nghiệm", 5),
-    ("💬 Góc chia sẻ", 6),
-]
-
-# --- Đọc tab hiện tại từ query params ---
-query_params = st.query_params
-tab_index = int(query_params.get("tab", 0)) if "tab" in query_params else 0
-
-# --- Giao diện đầu trang với menu ngang ---
+# --- Giao diện đầu trang ---
 st.markdown(f"""
     <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
         <div style="display: flex; align-items: center;">
             <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
-        </div>
-        <div style="display: flex; gap: 20px; font-size: 16px;">
-            {''.join([f'<a href="?tab={i}" style="text-decoration:none; color:{"#40E0D0" if i==tab_index else "#000"};">{name}</a>' for name, i in menu_items])}
+            <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
         </div>
     </div>
     <hr style="margin-top: 0;">
 """, unsafe_allow_html=True)
 
-# --- Nội dung tương ứng từng chuyên mục ---
-if tab_index == 0:
-    st.subheader("🏠 Trang chủ")
-    st.write("Chào mừng bạn đến với Tin Học Online!")
-elif tab_index == 1:
-    st.subheader("🔑 Kiểm tra mật khẩu")
-    st.write("Nhập mật khẩu để kiểm tra độ mạnh...")
-elif tab_index == 2:
-    st.subheader("🌐 Thiết kế Web cơ bản")
-    st.write("Học HTML, CSS, JS cơ bản tại đây.")
-elif tab_index == 3:
-    st.subheader("🔐 An toàn thông tin")
-    st.write("Các kiến thức về bảo mật, an toàn khi sử dụng internet.")
-elif tab_index == 4:
-    st.subheader("📂 Kho tài liệu")
-    st.write("Tổng hợp tài liệu học tập, ebook, giáo trình...")
-elif tab_index == 5:
-    st.subheader("🧠 Trắc nghiệm")
-    st.write("Làm bài kiểm tra để ôn luyện kiến thức.")
-elif tab_index == 6:
-    st.subheader("💬 Góc chia sẻ")
-    st.write("Nơi bạn chia sẻ kinh nghiệm, mẹo hay về tin học.")
+# --- Nút chọn chuyên đề ---
+if st.button("📚 Chọn chuyên đề"):
+    st.session_state.show_topics = not st.session_state.get("show_topics", False)
 
+# --- Hiển thị danh sách chuyên đề dọc khi đã nhấn nút ---
+if st.session_state.get("show_topics", False):
+    topic = st.radio("📂 Danh sách chuyên đề:", [
+        "🌐 Thiết kế Web cơ bản",
+        "🔐 An toàn thông tin",
+        "📂 Kho tài liệu",
+        "🧠 Trắc nghiệm",
+        "💬 Góc chia sẻ"
+    ])
+    
+    # Hiển thị nội dung theo chuyên đề đã chọn
+    st.subheader(topic)
+    if topic == "🌐 Thiết kế Web cơ bản":
+        st.write("Hướng dẫn HTML, CSS, JS...")
+    elif topic == "🔐 An toàn thông tin":
+        st.write("Kiến thức bảo mật...")
+    elif topic == "📂 Kho tài liệu":
+        st.write("Tài liệu, giáo trình...")
+    elif topic == "🧠 Trắc nghiệm":
+        st.write("Luyện tập trắc nghiệm online.")
+    elif topic == "💬 Góc chia sẻ":
+        st.write("Nơi trao đổi, chia sẻ kinh nghiệm.")
+else:
+    st.info("Nhấn nút '📚 Chọn chuyên đề' để bắt đầu.")
