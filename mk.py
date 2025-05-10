@@ -139,6 +139,28 @@ if st.session_state.get("menu") is not None:
 page = st.session_state.current_page
 
 if page == "Trang chủ":
+    st.markdown("""
+        <div style="position: relative; text-align: center; color: white;">
+            <img src="https://hoc10.monkeyuni.net/upload/hoc10/thumb/Artboard4.png" 
+                 style="width: 100%; height: auto; border-radius: 10px;">
+            <div style="position: absolute; top: 50%; left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 36px; font-weight: bold; background-color: rgba(0,0,0,0.4); padding: 10px 20px; border-radius: 10px;">
+                Học Tin Học Online
+            </div>
+            <div style="position: absolute; top: 60%; left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 24px; font-weight: normal; background-color: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 10px;">
+                Chương trình học đa dạng, dễ tiếp cận.
+            </div>
+            <div style="position: absolute; top: 70%; left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 20px; font-weight: normal; background-color: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 10px;">
+                Học mọi lúc, mọi nơi với tài liệu phong phú.
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
     st.title("🎓 Chào mừng đến với Tin Học Online")
     st.write("Trang web học tập, ôn luyện và chia sẻ tài liệu Tin học.")
 elif page == "Mua sách":
