@@ -3,43 +3,28 @@ import streamlit as st
 # --- Cấu hình trang ---
 st.set_page_config(page_title="Tin Học Online", layout="wide")
 
-# --- Logo & Tiêu đề ---
-logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
-
-# --- Khởi tạo trạng thái toggle ---
+# --- Khởi tạo trạng thái ---
 if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
 
-# --- Xử lý toggle từ query_params ---
-query_params = st.query_params
-if "toggle" in query_params:
-    st.session_state.show_topics = not st.session_state.show_topics
-    st.query_params.clear()  # Xoá query để tránh lặp toggle khi reload
+# --- Layout ngang: logo bên trái, nút bên phải ---
+col1, col2 = st.columns([6, 1])  # 6 phần logo + tiêu đề, 1 phần nút
 
-# --- Giao diện đầu trang với nút ở bên phải ---
-st.markdown(f"""
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 5px;">
+with col1:
+    st.markdown(f"""
         <div style="display: flex; align-items: center;">
-            <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
-            <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
+            <img src="https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG" width="60" style="margin-right: 10px;">
+            <h2 style="color: #40E0D0; margin: 0;">Tin Học Online</h2>
         </div>
-        <a href="?toggle=1">
-            <button style="
-                background-color: #40E0D0; 
-                color: white; 
-                border: none; 
-                padding: 8px 16px; 
-                font-size: 14px; 
-                border-radius: 6px; 
-                cursor: pointer;">
-                📚 Chọn chuyên đề
-            </button>
-        </a>
-    </div>
-    <hr style="margin-top: 0;">
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-# --- Hiển thị danh sách chuyên đề nếu đã bật ---
+with col2:
+    if st.button("📚 Chọn chuyên đề"):
+        st.session_state.show_topics = not st.session_state.show_topics
+
+st.markdown("<hr>", unsafe_allow_html=True)
+
+# --- Hiển thị danh sách chuyên đề nếu đã nhấn nút ---
 if st.session_state.show_topics:
     topic = st.radio("📂 Danh sách chuyên đề:", [
         "🌐 Thiết kế Web cơ bản",
