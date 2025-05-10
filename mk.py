@@ -8,7 +8,7 @@ st.set_page_config(page_title="Tin Học Online", layout="wide")
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
 menu = ["🏠 Trang chủ", "🔑 Kiểm tra mật khẩu", "🌐 Thiết kế Web", "🔐 An toàn thông tin", "📂 Kho tài liệu", "🧠 Trắc nghiệm", "💬 Góc chia sẻ"]
 
-# CSS + HTML cho responsive navbar có toggle ☰
+# --- CSS + HTML: Bố cục logo bên trái, nút ☰ bên phải ---
 menu_html = f"""
 <style>
 .navbar {{
@@ -20,19 +20,25 @@ menu_html = f"""
 }}
 .navbar-header {{
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
 }}
-.navbar-logo {{
+.navbar-left {{
     display: flex;
     align-items: center;
-    font-size: 20px;
 }}
-.navbar-logo img {{
+.navbar-left img {{
     height: 40px;
     margin-right: 10px;
     border-radius: 6px;
+}}
+.navbar-title {{
+    font-size: 20px;
+}}
+.navbar-toggle {{
+    font-size: 26px;
+    padding: 0 10px;
 }}
 .navbar-menu {{
     display: none;
@@ -58,11 +64,12 @@ function toggleMenu() {{
 </script>
 
 <div class="navbar">
-    <div class="navbar-header" onclick="toggleMenu()">
-        <div class="navbar-logo">
+    <div class="navbar-header">
+        <div class="navbar-left">
             <img src="{logo_url}" alt="Logo">
-            <span>☰ Tin Học Online</span>
+            <span class="navbar-title">Tin Học Online</span>
         </div>
+        <div class="navbar-toggle" onclick="toggleMenu()">☰</div>
     </div>
     <div class="navbar-menu" id="menu-items">
 """
@@ -75,11 +82,11 @@ menu_html += "</div></div>"
 # Hiển thị menu
 st.markdown(menu_html, unsafe_allow_html=True)
 
-# Xác định mục đang chọn
-menu_index = st.experimental_get_query_params().get("menu", [0])[0]
-menu_index = int(menu_index)
+# === Đổi cách lấy tham số URL (Streamlit mới) ===
+params = st.query_params
+menu_index = int(params.get("menu", 0))
 
-# === Các mục nội dung ===
+# === Nội dung các mục ===
 if menu_index == 0:
     st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
     st.markdown("""
