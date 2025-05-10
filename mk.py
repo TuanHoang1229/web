@@ -6,23 +6,40 @@ st.set_page_config(page_title="Tin Học Online", layout="wide")
 # --- Logo & Tiêu đề ---
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
 
-# --- Giao diện đầu trang ---
+# --- Khởi tạo trạng thái toggle ---
+if "show_topics" not in st.session_state:
+    st.session_state.show_topics = False
+
+# --- HTML + CSS để canh logo và nút ngang hàng ---
 st.markdown(f"""
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 5px;">
         <div style="display: flex; align-items: center;">
             <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
             <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
         </div>
+        <form action="" method="post">
+            <button name="toggle" type="submit" style="
+                background-color: #40E0D0; 
+                color: white; 
+                border: none; 
+                padding: 8px 16px; 
+                font-size: 14px; 
+                border-radius: 6px; 
+                cursor: pointer;">
+                📚 Chọn chuyên đề
+            </button>
+        </form>
     </div>
     <hr style="margin-top: 0;">
 """, unsafe_allow_html=True)
 
-# --- Nút chọn chuyên đề ---
-if st.button("📚 Chọn chuyên đề"):
-    st.session_state.show_topics = not st.session_state.get("show_topics", False)
+# --- Xử lý toggle khi bấm nút ---
+if st.session_state.get("_form_submit_button_toggled", False):
+    st.session_state.show_topics = not st.session_state.show_topics
+st.session_state["_form_submit_button_toggled"] = "toggle" in st.experimental_get_query_params()
 
-# --- Hiển thị danh sách chuyên đề dọc khi đã nhấn nút ---
-if st.session_state.get("show_topics", False):
+# --- Hiển thị danh sách chuyên đề nếu đã bật ---
+if st.session_state.show_topics:
     topic = st.radio("📂 Danh sách chuyên đề:", [
         "🌐 Thiết kế Web cơ bản",
         "🔐 An toàn thông tin",
@@ -30,8 +47,7 @@ if st.session_state.get("show_topics", False):
         "🧠 Trắc nghiệm",
         "💬 Góc chia sẻ"
     ])
-    
-    # Hiển thị nội dung theo chuyên đề đã chọn
+
     st.subheader(topic)
     if topic == "🌐 Thiết kế Web cơ bản":
         st.write("Hướng dẫn HTML, CSS, JS...")
@@ -43,5 +59,3 @@ if st.session_state.get("show_topics", False):
         st.write("Luyện tập trắc nghiệm online.")
     elif topic == "💬 Góc chia sẻ":
         st.write("Nơi trao đổi, chia sẻ kinh nghiệm.")
-else:
-    st.info("Nhấn nút '📚 Chọn chuyên đề' để bắt đầu.")
