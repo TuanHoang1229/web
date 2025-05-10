@@ -10,15 +10,21 @@ logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main
 if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
 
-# --- HTML + CSS để canh logo và nút ngang hàng ---
+# --- Xử lý toggle từ query_params ---
+query_params = st.query_params
+if "toggle" in query_params:
+    st.session_state.show_topics = not st.session_state.show_topics
+    st.query_params.clear()  # Xoá query để tránh lặp toggle khi reload
+
+# --- Giao diện đầu trang với nút ở bên phải ---
 st.markdown(f"""
     <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 5px;">
         <div style="display: flex; align-items: center;">
             <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
             <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
         </div>
-        <form action="" method="post">
-            <button name="toggle" type="submit" style="
+        <a href="?toggle=1">
+            <button style="
                 background-color: #40E0D0; 
                 color: white; 
                 border: none; 
@@ -28,15 +34,10 @@ st.markdown(f"""
                 cursor: pointer;">
                 📚 Chọn chuyên đề
             </button>
-        </form>
+        </a>
     </div>
     <hr style="margin-top: 0;">
 """, unsafe_allow_html=True)
-
-# --- Xử lý toggle khi bấm nút ---
-if st.session_state.get("_form_submit_button_toggled", False):
-    st.session_state.show_topics = not st.session_state.show_topics
-st.session_state["_form_submit_button_toggled"] = "toggle" in st.experimental_get_query_params()
 
 # --- Hiển thị danh sách chuyên đề nếu đã bật ---
 if st.session_state.show_topics:
