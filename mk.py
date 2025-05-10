@@ -1,120 +1,138 @@
 import streamlit as st
 import random
 import string
-import hashlib
-# --- Logo & Tiêu đề (bo tròn + gọn đẹp) ---
+
+st.set_page_config(page_title="Tin Học Online", layout="wide")
+
+# --- Logo & Menu ---
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
-st.markdown("""
-    <div style="
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 10px 20px; background-color: #ffffff;
-        border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <div style="display: flex; align-items: center;">
-            <img src="{logo_url}" alt="Logo" width="50" height="50" style="border-radius: 50%; margin-right: 15px;">
-            <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
+menu = ["🏠 Trang chủ", "🔑 Kiểm tra mật khẩu", "🌐 Thiết kế Web", "🔐 An toàn thông tin", "📂 Kho tài liệu", "🧠 Trắc nghiệm", "💬 Góc chia sẻ"]
+
+# CSS + HTML cho responsive navbar có toggle ☰
+menu_html = f"""
+<style>
+.navbar {{
+    background-color: #f8f9fa;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}}
+.navbar-header {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}}
+.navbar-logo {{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}}
+.navbar-logo img {{
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 6px;
+}}
+.navbar-menu {{
+    display: none;
+    margin-top: 10px;
+    flex-direction: column;
+}}
+.navbar-menu a {{
+    padding: 6px 0;
+    color: #333;
+    text-decoration: none;
+}}
+.navbar-menu a:hover {{
+    color: #40E0D0;
+    text-decoration: underline;
+}}
+</style>
+
+<script>
+function toggleMenu() {{
+    var menu = document.getElementById("menu-items");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}}
+</script>
+
+<div class="navbar">
+    <div class="navbar-header" onclick="toggleMenu()">
+        <div class="navbar-logo">
+            <img src="{logo_url}" alt="Logo">
+            <span>☰ Tin Học Online</span>
         </div>
     </div>
-    <hr style="margin-top: 10px;">
-""", unsafe_allow_html=True)
+    <div class="navbar-menu" id="menu-items">
+"""
 
-# --- Menu 3 gạch (sidebar) ---
-with st.sidebar:
-    st.image(logo_url, width=100)
-    st.title("☰ Menu")
-    choice = st.radio("Chọn chuyên mục:", [
-        "🏠 Trang chủ",
-        "🔑 Kiểm tra mật khẩu",
-        "🌐 Thiết kế Web cơ bản", 
-        "🔐 An toàn thông tin",
-        "📂 Kho tài liệu",
-        "🧠 Trắc nghiệm",
-        "💬 Góc chia sẻ"
-    ])
+# Thêm các mục menu
+for i, item in enumerate(menu):
+    menu_html += f'<a href="?menu={i}">{item}</a>'
+menu_html += "</div></div>"
 
-if choice == "🏠 Trang chủ":
+# Hiển thị menu
+st.markdown(menu_html, unsafe_allow_html=True)
+
+# Xác định mục đang chọn
+menu_index = st.experimental_get_query_params().get("menu", [0])[0]
+menu_index = int(menu_index)
+
+# === Các mục nội dung ===
+if menu_index == 0:
     st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
     st.markdown("""
-    (nội dung như bạn đã viết ở `tabs[0]`)
-    """)
+Trang web này hỗ trợ học sinh học và thực hành các kỹ năng **Tin học hiện đại** như:
 
-elif choice == "🔑 Kiểm tra mật khẩu":
+- 🌐 Thiết kế Web
+- 🔐 An toàn thông tin
+- 🔑 Kiểm tra mật khẩu
+
+---
+
+**📌 Mục tiêu:**  
+- Học qua thực hành  
+- Nâng cao kỹ năng tư duy và công nghệ
+
+**📌 Hướng dẫn:**  
+- Chọn chuyên mục ở thanh phía trên  
+- Làm trắc nghiệm, xem tài liệu, chia sẻ bài làm của bạn!
+
+> **“Công nghệ sẽ không thay thế giáo viên, nhưng giáo viên biết công nghệ sẽ thay thế người không biết.”**  
+> – *Ray Clifford*
+""")
+
+elif menu_index == 1:
     st.header("🔐 Kiểm tra & Tạo mật khẩu mạnh")
-    # (phần kiểm tra mật khẩu như cũ)
 
-elif choice == "🌐 Thiết kế Web cơ bản":
+    def calculate_strength(password):
+        score = 0
+        if len(password) >= 8: score += 1
+        if len(password) >= 12: score += 1
+        if any(c.isdigit() for c in password): score += 1
+        if any(c.islower() for c in password): score += 1
+        if any(c.isupper() for c in password): score += 1
+        if any(c in string.punctuation for c in password): score += 1
+        return score
+
+    password = st.text_input("Nhập mật khẩu của bạn:", type="password")
+    if password:
+        strength = calculate_strength(password)
+        if strength <= 2:
+            st.warning("⚠️ Mật khẩu yếu")
+        elif strength <= 4:
+            st.info("🔐 Mật khẩu trung bình")
+        else:
+            st.success("💪 Mật khẩu mạnh")
+
+    if st.button("Tạo mật khẩu ngẫu nhiên"):
+        new_pass = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=12))
+        st.write(f"🔑 Mật khẩu mới: `{new_pass}`")
+
+elif menu_index == 2:
     st.header("🖥️ Thiết kế Web cơ bản với HTML & CSS")
-    # (phần thiết kế web như tabs[2])
+    st.markdown("""
+**HTML**: tạo cấu trúc trang web  
+**CSS**: tạo kiểu dáng
 
-# ... tiếp tục cho các chuyên mục khác
-
-
-# Tính độ mạnh mật khẩu
-def calculate_strength(password):
-    strength = 0
-    if len(password) >= 8:
-        strength += 1
-    if any(c.islower() for c in password):
-        strength += 1
-    if any(c.isupper() for c in password):
-        strength += 1
-    if any(c.isdigit() for c in password):
-        strength += 1
-    if any(c in string.punctuation for c in password):
-        strength += 1
-    return strength
-
-# UI
-st.set_page_config(page_title="Tạo mật khẩu mạnh", page_icon="🔒")
-st.title("🔐 Trình tạo mật khẩu mạnh")
-
-length = st.number_input("Độ dài mật khẩu", min_value=6, max_value=100, value=12)
-
-if st.button("Tạo mật khẩu"):
-    chars = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(chars) for _ in range(length))
-    st.text_input("Mật khẩu của bạn", password)
-    
-    strength = calculate_strength(password)
-    strength_labels = ["Rất yếu", "Yếu", "Trung bình", "Mạnh", "Rất mạnh"]
-    st.progress(strength * 20)
-    st.success(f"Độ mạnh: {strength_labels[strength - 1] if strength else 'Rất yếu'}")
-
-    if st.button("Lưu mật khẩu (SHA-256)"):
-        hashed = hashlib.sha256(password.encode()).hexdigest()
-        with open("saved_passwords.txt", "a") as f:
-            f.write(hashed + "\n")
-        st.success("Đã lưu mật khẩu (dạng SHA-256) vào file.")
-
-
-def calculate_strength(password):
-    strength = 0
-    if len(password) >= 8:
-        strength += 1
-    if any(c.islower() for c in password):
-        strength += 1
-    if any(c.isupper() for c in password):
-        strength += 1
-    if any(c.isdigit() for c in password):
-        strength += 1
-    if any(c in string.punctuation for c in password):
-        strength += 1
-    return strength
-
-def password_strength_text(score):
-    if score <= 2:
-        return "❌ Yếu", "red"
-    elif score == 3 or score == 4:
-        return "⚠️ Trung bình", "orange"
-    else:
-        return "✅ Mạnh", "green"
-
-st.title("🔐 Kiểm tra độ mạnh của mật khẩu")
-
-password = st.text_input("Nhập mật khẩu:", type="password")
-
-if password:
-    score = calculate_strength(password)
-    strength_text, color = password_strength_text(score)
-    
-    st.markdown(f"**Đánh giá:** <span style='color:{color}'>{strength_text}</span>", unsafe_allow_html=True)
-    st.progress(score * 20)
