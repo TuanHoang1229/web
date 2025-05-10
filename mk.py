@@ -7,24 +7,26 @@ st.set_page_config(page_title="Tin Học Online", layout="wide")
 if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
 
-# --- Layout ngang: logo bên trái, nút bên phải ---
-col1, col2 = st.columns([6, 1])  # 6 phần logo + tiêu đề, 1 phần nút
+# --- Layout logo + nút chuyên đề (đặt ngang hàng và căn giữa) ---
+col1, col2 = st.columns([7, 1.5])  # 7 phần logo, 1.5 phần nút
 
 with col1:
     st.markdown(f"""
-        <div style="display: flex; align-items: center;">
-            <img src="https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG" width="60" style="margin-right: 10px;">
+        <div style="display: flex; align-items: center; height: 60px;">
+            <img src="https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG" width="50" style="margin-right: 12px;">
             <h2 style="color: #40E0D0; margin: 0;">Tin Học Online</h2>
         </div>
     """, unsafe_allow_html=True)
 
 with col2:
+    st.markdown("<div style='height: 24px;'></div>", unsafe_allow_html=True)  # tăng từ 12px lên 24px
     if st.button("📚 Chọn chuyên đề"):
         st.session_state.show_topics = not st.session_state.show_topics
 
-st.markdown("<hr>", unsafe_allow_html=True)
+# --- Gạch ngang ---
+st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
-# --- Hiển thị danh sách chuyên đề nếu đã nhấn nút ---
+# --- Hiển thị danh sách chuyên đề nếu được bật ---
 if st.session_state.show_topics:
     topic = st.radio("📂 Danh sách chuyên đề:", [
         "🌐 Thiết kế Web cơ bản",
