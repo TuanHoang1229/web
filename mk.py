@@ -26,7 +26,6 @@ st.markdown(f"""
     <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
         <div style="display: flex; align-items: center;">
             <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
-            <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
         </div>
         <div style="display: flex; gap: 20px; font-size: 16px;">
             {''.join([f'<a href="?tab={i}" style="text-decoration:none; color:{"#40E0D0" if i==tab_index else "#000"};">{name}</a>' for name, i in menu_items])}
