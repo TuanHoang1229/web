@@ -132,6 +132,3 @@ elif menu_index == 1:
 
 elif menu_index == 2:
     st.header("🖥️ Thiết kế Web cơ bản với HTML & CSS")
-**HTML**: tạo cấu trúc trang web  
-**CSS**: tạo kiểu dáng
-
