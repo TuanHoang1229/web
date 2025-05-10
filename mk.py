@@ -2,6 +2,51 @@ import streamlit as st
 import random
 import string
 import hashlib
+# --- Logo & Tiêu đề (bo tròn + gọn đẹp) ---
+logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
+st.markdown("""
+    <div style="
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 10px 20px; background-color: #ffffff;
+        border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div style="display: flex; align-items: center;">
+            <img src="{logo_url}" alt="Logo" width="50" height="50" style="border-radius: 50%; margin-right: 15px;">
+            <h2 style="margin: 0; color: #40E0D0;">Tin Học Online</h2>
+        </div>
+    </div>
+    <hr style="margin-top: 10px;">
+""", unsafe_allow_html=True)
+
+# --- Menu 3 gạch (sidebar) ---
+with st.sidebar:
+    st.image(logo_url, width=100)
+    st.title("☰ Menu")
+    choice = st.radio("Chọn chuyên mục:", [
+        "🏠 Trang chủ",
+        "🔑 Kiểm tra mật khẩu",
+        "🌐 Thiết kế Web cơ bản", 
+        "🔐 An toàn thông tin",
+        "📂 Kho tài liệu",
+        "🧠 Trắc nghiệm",
+        "💬 Góc chia sẻ"
+    ])
+
+if choice == "🏠 Trang chủ":
+    st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
+    st.markdown("""
+    (nội dung như bạn đã viết ở `tabs[0]`)
+    """)
+
+elif choice == "🔑 Kiểm tra mật khẩu":
+    st.header("🔐 Kiểm tra & Tạo mật khẩu mạnh")
+    # (phần kiểm tra mật khẩu như cũ)
+
+elif choice == "🌐 Thiết kế Web cơ bản":
+    st.header("🖥️ Thiết kế Web cơ bản với HTML & CSS")
+    # (phần thiết kế web như tabs[2])
+
+# ... tiếp tục cho các chuyên mục khác
+
 
 # Tính độ mạnh mật khẩu
 def calculate_strength(password):
