@@ -3,9 +3,14 @@ import streamlit as st
 st.set_page_config(page_title="Tin Học Online", layout="wide")
 
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2935.JPG"
-menu_items = ["Mua sách", "Giới thiệu", "Tủ sách", "Học liệu", "Bài giảng", "Đề kiểm tra"]
 
-# --- CSS + HTML mới không có 3 gạch ---
+menu_items = ["Mua sách", "Giới thiệu", "Tủ sách", "Học liệu", "Bài giảng", "Đề kiểm tra"]
+submenu_items = ["Về chúng tôi", "Sứ mệnh", "Liên hệ"]
+
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "Trang chủ"
+
+# --- HTML Navbar với Dropdown ---
 navbar_html = f"""
 <style>
 .navbar {{
@@ -15,7 +20,7 @@ navbar_html = f"""
     background-color: white;
     padding: 10px 20px;
     font-family: sans-serif;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 1px solid #eee;
 }}
 .navbar-left {{
     display: flex;
@@ -33,22 +38,60 @@ navbar_html = f"""
 .navbar-menu {{
     display: flex;
     gap: 30px;
-}}
-.navbar-menu a {{
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 500;
-    font-size: 16px;
     position: relative;
 }}
-.navbar-menu a:hover::after {{
-    content: "";
+.menu-item {{
+    position: relative;
+}}
+.menu-button {{
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 5px;
+}}
+.menu-button:hover {{
+    color: #f58220;
+}}
+.dropdown {{
+    display: none;
     position: absolute;
+    top: 35px;
     left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    background-color: #f58220;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}}
+.menu-item:hover .dropdown {{
+    display: block;
+}}
+.dropdown button {{
+    background: none;
+    border: none;
+    padding: 8px 20px;
+    width: 150px;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}}
+.dropdown button:hover {{
+    background-color: #f2f2f2;
+}}
+.breadcrumb {{
+    margin: 10px 20px;
+    font-size: 14px;
+    color: #666;
+    font-family: sans-serif;
+}}
+.breadcrumb span {{
+    cursor: pointer;
+    color: #1a73e8;
+}}
+.breadcrumb span:hover {{
+    text-decoration: underline;
 }}
 </style>
 
@@ -58,42 +101,67 @@ navbar_html = f"""
         <span>Tin Học Online</span>
     </div>
     <div class="navbar-menu">
+        <form method="post"><button name="menu" value="Mua sách" class="menu-button">Mua sách</button></form>
+        <div class="menu-item">
+            <button class="menu-button">Giới thiệu ▼</button>
+            <div class="dropdown">
 """
 
-# Thêm mục menu vào HTML
-for i, item in enumerate(menu_items):
-    navbar_html += f'<a href="?menu={i}">{item}</a>'
-navbar_html += "</div></div>"
+for sub in submenu_items:
+    navbar_html += f"""<form method="post"><button name="menu" value="{sub}">{sub}</button></form>"""
 
-# Hiển thị menu
+navbar_html += """
+            </div>
+        </div>
+        <form method="post"><button name="menu" value="Tủ sách" class="menu-button">Tủ sách</button></form>
+        <form method="post"><button name="menu" value="Học liệu" class="menu-button">Học liệu</button></form>
+        <form method="post"><button name="menu" value="Bài giảng" class="menu-button">Bài giảng</button></form>
+        <form method="post"><button name="menu" value="Đề kiểm tra" class="menu-button">Đề kiểm tra</button></form>
+    </div>
+</div>
+"""
+
+# Breadcrumb
+breadcrumb_html = f"""<div class="breadcrumb"><span onclick="window.location.reload()">Trang chủ</span>"""
+if st.session_state.current_page != "Trang chủ":
+    breadcrumb_html += f" › {st.session_state.current_page}"
+breadcrumb_html += "</div>"
+
+# Hiển thị HTML
 st.markdown(navbar_html, unsafe_allow_html=True)
+st.markdown(breadcrumb_html, unsafe_allow_html=True)
 
-# Lấy menu đang chọn
-params = st.query_params
-menu_index = int(params.get("menu", 0))
+# Cập nhật nội dung nếu có click
+if st.session_state.get("menu") is not None:
+    st.session_state.current_page = st.session_state.menu
 
-# Nội dung các mục
-if menu_index == 0:
+# Nội dung trang
+page = st.session_state.current_page
+
+if page == "Trang chủ":
+    st.title("🎓 Chào mừng đến với Tin Học Online")
+    st.write("Trang web học tập, ôn luyện và chia sẻ tài liệu Tin học.")
+elif page == "Mua sách":
     st.title("📘 Mua sách")
-    st.markdown("Bạn có thể đặt mua các sách Tin học tại đây...")
-
-elif menu_index == 1:
-    st.title("📖 Giới thiệu")
-    st.markdown("Trang web học tập Tin học hiện đại, hỗ trợ tự học hiệu quả.")
-
-elif menu_index == 2:
+    st.write("Bạn có thể đặt mua các sách Tin học tại đây...")
+elif page == "Tủ sách":
     st.title("📚 Tủ sách")
-    st.markdown("Danh sách tài liệu và sách tham khảo được phân loại.")
-
-elif menu_index == 3:
+    st.write("Tủ sách bao gồm nhiều tài liệu học tập hữu ích.")
+elif page == "Học liệu":
     st.title("📂 Học liệu")
-    st.markdown("Tổng hợp các bài tập, đề thi, slide bài giảng...")
-
-elif menu_index == 4:
+    st.write("Tổng hợp các tài liệu học tập đa dạng.")
+elif page == "Bài giảng":
     st.title("🎓 Bài giảng")
-    st.markdown("Video bài giảng và hướng dẫn thực hành.")
-
-elif menu_index == 5:
+    st.write("Video và bài giảng chất lượng cao.")
+elif page == "Đề kiểm tra":
     st.title("📝 Đề kiểm tra")
-    st.markdown("Kiểm tra kiến thức qua các đề trắc nghiệm ngắn.")
-
+    st.write("Kiểm tra kiến thức với các đề kiểm tra.")
+elif page == "Về chúng tôi":
+    st.title("ℹ️ Về chúng tôi")
+    st.write("Thông tin về nhóm phát triển và mục tiêu của trang.")
+elif page == "Sứ mệnh":
+    st.title("🎯 Sứ mệnh")
+    st.write("Sứ mệnh của chúng tôi là giúp học sinh yêu thích Tin học.")
+elif page == "Liên hệ":
+    st.title("📞 Liên hệ")
+    st.write("Bạn có thể liên hệ qua email hoặc fanpage.")
