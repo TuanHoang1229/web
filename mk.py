@@ -8,7 +8,7 @@ if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
 
 # --- Layout logo + nút chuyên đề (đặt ngang hàng và căn giữa) ---
-col1, col2 = st.columns([6, 1.5])  # 7 phần logo, 1.5 phần nút
+col1, col2 = st.columns([7, 1.5])  # 7 phần logo, 1.5 phần nút
 
 with col1:
     st.markdown(f"""
