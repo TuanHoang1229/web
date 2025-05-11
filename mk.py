@@ -66,24 +66,18 @@ if st.session_state.show_topics:
     elif selected_topic == "💬 Góc chia sẻ":
         st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
 
-st.image(
-    "https://scontent.fhan3-2.fna.fbcdn.net/v/t39.30808-6/304851178_540789087851004_9097165287000760892_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=gHy6kXCaw2AQ7kNvwE-PviU&_nc_oc=Admrg-I1Ihfs1OeVmhVMDCN2WjDhY-G92J9d7FWnfMrm3PH2DaIHFPtWsp3spMJ7lTA&_nc_zt=23&_nc_ht=scontent.fhan3-2.fna&_nc_gid=zUR1Tl_81MyfEa2IiZydTg&oh=00_AfJdAFQuQ6pb2wh4fVJ3RBHgdKJnQDRy9rhd0jvLBUbplQ&oe=6825F9BA",
-    use_container_width=True,
-    caption="Trường THPT Lương Văn Tri"
-)
-
 # --- Nếu chưa bật menu: hiển thị Trang chủ mặc định ---
+else:
+    st.subheader("🏠 Trang chủ")
+    st.write("""
+        👋 Chào mừng bạn đến với **Tin Học Online**!
 
-st.subheader("🏠 Trang chủ")
-st.write("""
-    👋 Chào mừng bạn đến với **Tin Học Online**!
+        Đây là nền tảng học tập các kiến thức cơ bản và nâng cao về:
+        - Thiết kế Web
+        - An toàn thông tin
+        - Trắc nghiệm luyện tập
+        - Kho tài liệu bổ ích
+        - Khu vực chia sẻ và giao lưu
 
-     Đây là nền tảng học tập các kiến thức cơ bản và nâng cao về:
-    - Thiết kế Web
-    - An toàn thông tin
-    - Trắc nghiệm luyện tập
-    - Kho tài liệu bổ ích
-    - Khu vực chia sẻ và giao lưu
-
-    👉 Hãy nhấn **📚 Chọn chuyên đề** ở góc trên bên phải để bắt đầu!
-""")    
+        👉 Hãy nhấn **📚 Chọn chuyên đề** ở góc trên bên phải để bắt đầu!
+    """)
