@@ -107,29 +107,29 @@ Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tậ
 > – **Ray Clifford**
 """)
 
-st.markdown("""
-    <style>
-    .box {
-        background-color: #1f2a38;
-        color: white;
-        padding: 40px 30px;
-        border-radius: 10px;
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-    .box h3 {
-        margin-top: 0;
-        font-weight: bold;
-    }
-    .contact-item {
-        margin-bottom: 10px;
-    }
-    .stTextArea > div > textarea {
-        background-color: #ffffff10;
-        color: white;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+        .box {
+            background-color: #1f2a38;
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .box h3 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .stTextArea > div > textarea {
+            background-color: #ffffff10;
+            color: white;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     # Nội dung "Liên hệ + Góp ý"
     st.markdown('<div class="box">', unsafe_allow_html=True)
