@@ -5,10 +5,6 @@ import string
 # --- Cấu hình trang ---
 st.set_page_config(page_title="Tin Học Online", layout="wide")
 
-# --- Khởi tạo trạng thái ---
-if "show_topics" not in st.session_state:
-    st.session_state.show_topics = False
-
 # --- Header + Nút chọn chuyên đề ---
 col1, col2 = st.columns([7, 1.5])
 with col1:
@@ -21,6 +17,9 @@ with col1:
 
 with col2:
     st.markdown("<div style='height: 24px;'></div>", unsafe_allow_html=True)
+    if "show_topics" not in st.session_state:
+        st.session_state.show_topics = True  # Hiển thị luôn chọn chuyên đề lúc đầu
+
     if st.button("📚 Chọn chuyên đề"):
         st.session_state.show_topics = not st.session_state.show_topics
 
@@ -34,66 +33,71 @@ st.image(
     caption="📸 Trường THPT Lương Văn Tri"
 )
 
-# --- Hiển thị chuyên mục nếu được bật ---
+# --- Danh sách chuyên đề ---
+topic_list = [
+    "🏠 Trang chủ",
+    "🔑 Kiểm tra mật khẩu",
+    "🌐 Thiết kế Web cơ bản", 
+    "🔐 An toàn thông tin",
+    "📂 Kho tài liệu",
+    "🧠 Trắc nghiệm",
+    "💬 Góc chia sẻ"
+]
+
+# --- Chọn chuyên đề ---
 if st.session_state.show_topics:
-    selected_topics = st.multiselect("📌 Chọn các chuyên đề bạn muốn xem:", [
-        "🏠 Trang chủ",
-        "🔑 Kiểm tra mật khẩu",
-        "🌐 Thiết kế Web cơ bản", 
-        "🔐 An toàn thông tin",
-        "📂 Kho tài liệu",
-        "🧠 Trắc nghiệm",
-        "💬 Góc chia sẻ"
-    ])
+    selected_topic = st.selectbox("📌 Chọn chuyên đề:", topic_list, index=0)
+else:
+    selected_topic = "🏠 Trang chủ"
 
-    for topic in selected_topics:
-        if topic == "🏠 Trang chủ":
-            st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
-            st.markdown("👉 Nội dung phần Trang chủ ở đây...")
+# --- Hiển thị nội dung từng phần ---
+if selected_topic == "🏠 Trang chủ":
+    st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
+    st.markdown("👉 Nội dung phần Trang chủ ở đây...")
 
-        elif topic == "🔑 Kiểm tra mật khẩu":
-            st.header("🔐 Kiểm tra & Tạo mật khẩu mạnh")
+elif selected_topic == "🔑 Kiểm tra mật khẩu":
+    st.header("🔐 Kiểm tra & Tạo mật khẩu mạnh")
 
-            def calculate_strength(password):
-                score = 0
-                if len(password) >= 8: score += 1
-                if len(password) >= 12: score += 1
-                if any(c.isdigit() for c in password): score += 1
-                if any(c.islower() for c in password): score += 1
-                if any(c.isupper() for c in password): score += 1
-                if any(c in string.punctuation for c in password): score += 1
-                return score
+    def calculate_strength(password):
+        score = 0
+        if len(password) >= 8: score += 1
+        if len(password) >= 12: score += 1
+        if any(c.isdigit() for c in password): score += 1
+        if any(c.islower() for c in password): score += 1
+        if any(c.isupper() for c in password): score += 1
+        if any(c in string.punctuation for c in password): score += 1
+        return score
 
-            password = st.text_input("Nhập mật khẩu của bạn để kiểm tra:", type="password")
-            if password:
-                strength = calculate_strength(password)
-                if strength <= 2:
-                    st.warning("⚠️ Mật khẩu yếu")
-                elif strength <= 4:
-                    st.info("🔐 Mật khẩu trung bình")
-                else:
-                    st.success("💪 Mật khẩu mạnh")
+    password = st.text_input("Nhập mật khẩu của bạn để kiểm tra:", type="password")
+    if password:
+        strength = calculate_strength(password)
+        if strength <= 2:
+            st.warning("⚠️ Mật khẩu yếu")
+        elif strength <= 4:
+            st.info("🔐 Mật khẩu trung bình")
+        else:
+            st.success("💪 Mật khẩu mạnh")
 
-            if st.button("Tạo mật khẩu ngẫu nhiên"):
-                generated_password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=12))
-                st.write(f"🔑 Mật khẩu ngẫu nhiên: {generated_password}")
+    if st.button("Tạo mật khẩu ngẫu nhiên"):
+        generated_password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=12))
+        st.write(f"🔑 Mật khẩu ngẫu nhiên: {generated_password}")
 
-        elif topic == "🌐 Thiết kế Web cơ bản":
-            st.header("🖥️ Thiết kế Web cơ bản với HTML & CSS")
-            st.markdown("👉 Nội dung HTML/CSS ở đây...")
+elif selected_topic == "🌐 Thiết kế Web cơ bản":
+    st.header("🖥️ Thiết kế Web cơ bản với HTML & CSS")
+    st.markdown("👉 Nội dung HTML/CSS ở đây...")
 
-        elif topic == "🔐 An toàn thông tin":
-            st.header("🔐 An toàn Thông tin")
-            st.markdown("👉 Nội dung An toàn thông tin ở đây...")
+elif selected_topic == "🔐 An toàn thông tin":
+    st.header("🔐 An toàn Thông tin")
+    st.markdown("👉 Nội dung An toàn thông tin ở đây...")
 
-        elif topic == "📂 Kho tài liệu":
-            st.header("📚 Kho tài liệu")
-            st.markdown("👉 Nội dung Kho tài liệu ở đây...")
+elif selected_topic == "📂 Kho tài liệu":
+    st.header("📚 Kho tài liệu")
+    st.markdown("👉 Nội dung Kho tài liệu ở đây...")
 
-        elif topic == "🧠 Trắc nghiệm":
-            st.header("🧠 Trắc nghiệm tự luyện")
-            st.markdown("👉 Nội dung Trắc nghiệm ở đây...")
+elif selected_topic == "🧠 Trắc nghiệm":
+    st.header("🧠 Trắc nghiệm tự luyện")
+    st.markdown("👉 Nội dung Trắc nghiệm ở đây...")
 
-        elif topic == "💬 Góc chia sẻ":
-            st.header("📬 Góc chia sẻ - Gửi bài thực hành")
-            st.markdown("[📎 Gửi bài tại đây](https://forms.gle/...)")
+elif selected_topic == "💬 Góc chia sẻ":
+    st.header("📬 Góc chia sẻ - Gửi bài thực hành")
+    st.markdown("[📎 Gửi bài tại đây](https://forms.gle/...)")
