@@ -7,7 +7,7 @@ st.set_page_config(page_title="Tin Học Online", layout="wide")
 if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
 
-# --- Layout logo + nút chuyên đề ---
+# --- Logo + Nút chọn chuyên đề ---
 col1, col2 = st.columns([7, 1.5])
 
 with col1:
@@ -26,7 +26,7 @@ with col2:
 # --- Gạch ngang ---
 st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
-# --- Chuyên mục có thể chọn nhiều ---
+# --- Danh sách chuyên đề ---
 topics_list = [
     "🌐 Thiết kế Web cơ bản",
     "🔐 An toàn thông tin",
@@ -35,22 +35,21 @@ topics_list = [
     "💬 Góc chia sẻ"
 ]
 
-# --- Nếu bật chuyên đề: hiển thị multiselect ---
+# --- Nếu người dùng chọn chuyên đề ---
 if st.session_state.show_topics:
-    selected_topics = st.multiselect("📂 Chọn các chuyên đề bạn quan tâm:", topics_list)
+    selected_topic = st.selectbox("📂 Chọn chuyên đề:", topics_list)
 
-    for topic in selected_topics:
-        st.subheader(topic)
-        if topic == "🌐 Thiết kế Web cơ bản":
-            st.write("📘 Hướng dẫn HTML, CSS, JS từ cơ bản đến nâng cao.")
-        elif topic == "🔐 An toàn thông tin":
-            st.write("🔒 Các kiến thức về bảo mật, phòng chống tấn công mạng.")
-        elif topic == "📂 Kho tài liệu":
-            st.write("📁 Tài liệu tham khảo, giáo trình, bài giảng...")
-        elif topic == "🧠 Trắc nghiệm":
-            st.write("📝 Các bộ đề trắc nghiệm luyện tập.")
-        elif topic == "💬 Góc chia sẻ":
-            st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
+    st.subheader(selected_topic)
+    if selected_topic == "🌐 Thiết kế Web cơ bản":
+        st.write("📘 Hướng dẫn HTML, CSS, JS từ cơ bản đến nâng cao.")
+    elif selected_topic == "🔐 An toàn thông tin":
+        st.write("🔒 Các kiến thức về bảo mật, phòng chống tấn công mạng.")
+    elif selected_topic == "📂 Kho tài liệu":
+        st.write("📁 Tài liệu tham khảo, giáo trình, bài giảng...")
+    elif selected_topic == "🧠 Trắc nghiệm":
+        st.write("📝 Các bộ đề trắc nghiệm luyện tập.")
+    elif selected_topic == "💬 Góc chia sẻ":
+        st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
 
 # --- Trang chủ nếu chưa chọn ---
 else:
