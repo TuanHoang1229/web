@@ -107,52 +107,68 @@ Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tậ
 > – **Ray Clifford**
 """)
 
-    # CSS tùy chỉnh
-    st.markdown("""
-        <style>
-        .box {
-            background-color: #1f2a38;
-            color: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-        .box h3 {
-            margin-top: 0;
-            font-weight: bold;
-        }
-        .contact-item {
-            margin-bottom: 10px;
-        }
-        .stTextArea > div > textarea {
-            background-color: #ffffff10;
-            color: white;
-        }
-        </style>
-    """, unsafe_allow_html=True)
+   st.markdown("""
+    <style>
+    .box {
+        background-color: #1f2a38;
+        color: white;
+        padding: 40px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .box h3 {
+        margin-top: 0;
+        font-weight: bold;
+    }
+    .contact-item {
+        margin-bottom: 10px;
+    }
+    .stTextArea > div > textarea {
+        background-color: #ffffff10;
+        color: white;
+    }
+    .stButton > button {
+        background-color: #00c4cc;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .stButton > button:hover {
+        background-color: #009fa3;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
     # Nội dung "Liên hệ + Góp ý"
     st.markdown('<div class="box">', unsafe_allow_html=True)
-
+    
     # Thông tin liên hệ
     st.markdown("<h3>Liên hệ</h3>", unsafe_allow_html=True)
     st.markdown('<div class="contact-item">📍 <strong>Địa chỉ:</strong> Trường THPT Lương Văn Tri</div>', unsafe_allow_html=True)
     st.markdown('<div class="contact-item">📧 <strong>Email:</strong> ContactLVT@edu.vn</div>', unsafe_allow_html=True)
     st.markdown('<div class="contact-item">📞 <strong>Số điện thoại:</strong> 0966 813 528</div>', unsafe_allow_html=True)
     st.markdown('<div class="contact-item">👤 <strong>Người thực hiện:</strong> Hoàng Minh Tuấn</div>', unsafe_allow_html=True)
-
+    
     # Góp ý kiến
     st.markdown("<h3 style='margin-top:40px;'>Góp ý kiến</h3>", unsafe_allow_html=True)
     feedback = st.text_area("Nhập ý kiến của bạn", height=120, label_visibility="collapsed")
-
+    
     if st.button("Gửi"):
         if feedback.strip():
             st.success("✅ Cảm ơn bạn đã góp ý!")
         else:
             st.warning("⚠️ Vui lòng nhập nội dung góp ý.")
-
+    
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 # --- Kiểm tra mật khẩu ---
