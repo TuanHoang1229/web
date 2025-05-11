@@ -3,6 +3,13 @@ import streamlit as st
 # --- Cấu hình trang ---
 st.set_page_config(page_title="Tin Học Online", layout="wide")
 
+# --- Ảnh đầu trang ---
+st.image(
+    "https://scontent.fhan3-2.fna.fbcdn.net/v/t39.30808-6/304851178_540789087851004_9097165287000760892_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=gHy6kXCaw2AQ7kNvwE-PviU&_nc_oc=Admrg-I1Ihfs1OeVmhVMDCN2WjDhY-G92J9d7FWnfMrm3PH2DaIHFPtWsp3spMJ7lTA&_nc_zt=23&_nc_ht=scontent.fhan3-2.fna&_nc_gid=zUR1Tl_81MyfEa2IiZydTg&oh=00_AfJdAFQuQ6pb2wh4fVJ3RBHgdKJnQDRy9rhd0jvLBUbplQ&oe=6825F9BA",
+    use_container_width=True,
+    caption="Trường THPT Lương Văn Tri"
+)
+
 # --- Khởi tạo trạng thái ---
 if "show_topics" not in st.session_state:
     st.session_state.show_topics = False
@@ -26,7 +33,7 @@ with col2:
 # --- Gạch ngang ---
 st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
-# --- Danh sách chuyên đề (có cả Trang chủ) ---
+# --- Danh sách chuyên đề ---
 topics_list = [
     "🏠 Trang chủ",
     "🌐 Thiết kế Web cơ bản",
@@ -36,7 +43,7 @@ topics_list = [
     "💬 Góc chia sẻ"
 ]
 
-# --- Giao diện chọn chuyên đề ---
+# --- Hiển thị giao diện chọn chuyên đề ---
 if st.session_state.show_topics:
     selected_topic = st.selectbox("📂 Chọn chuyên đề:", topics_list)
 
@@ -65,12 +72,6 @@ if st.session_state.show_topics:
         st.write("📝 Các bộ đề trắc nghiệm luyện tập.")
     elif selected_topic == "💬 Góc chia sẻ":
         st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
-
-st.image(
-    "https://scontent.fhan3-2.fna.fbcdn.net/v/t39.30808-6/304851178_540789087851004_9097165287000760892_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=gHy6kXCaw2AQ7kNvwE-PviU&_nc_oc=Admrg-I1Ihfs1OeVmhVMDCN2WjDhY-G92J9d7FWnfMrm3PH2DaIHFPtWsp3spMJ7lTA&_nc_zt=23&_nc_ht=scontent.fhan3-2.fna&_nc_gid=zUR1Tl_81MyfEa2IiZydTg&oh=00_AfJdAFQuQ6pb2wh4fVJ3RBHgdKJnQDRy9rhd0jvLBUbplQ&oe=6825F9BA",
-    use_container_width=True,
-    caption="Trường THPT Lương Văn Tri"
-)
 
 # --- Nếu chưa bật menu: hiển thị Trang chủ mặc định ---
 else:
