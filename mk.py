@@ -26,8 +26,9 @@ with col2:
 # --- Gạch ngang ---
 st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
-# --- Danh sách chuyên đề ---
+# --- Danh sách chuyên đề (có cả Trang chủ) ---
 topics_list = [
+    "🏠 Trang chủ",
     "🌐 Thiết kế Web cơ bản",
     "🔐 An toàn thông tin",
     "📂 Kho tài liệu",
@@ -35,12 +36,26 @@ topics_list = [
     "💬 Góc chia sẻ"
 ]
 
-# --- Nếu người dùng chọn chuyên đề ---
+# --- Giao diện chọn chuyên đề ---
 if st.session_state.show_topics:
     selected_topic = st.selectbox("📂 Chọn chuyên đề:", topics_list)
 
     st.subheader(selected_topic)
-    if selected_topic == "🌐 Thiết kế Web cơ bản":
+
+    if selected_topic == "🏠 Trang chủ":
+        st.write("""
+            👋 Chào mừng bạn đến với **Tin Học Online**!
+
+            Đây là nền tảng học tập các kiến thức cơ bản và nâng cao về:
+            - Thiết kế Web
+            - An toàn thông tin
+            - Trắc nghiệm luyện tập
+            - Kho tài liệu bổ ích
+            - Khu vực chia sẻ và giao lưu
+
+            👉 Hãy chọn chuyên đề bạn quan tâm ở danh sách bên trên!
+        """)
+    elif selected_topic == "🌐 Thiết kế Web cơ bản":
         st.write("📘 Hướng dẫn HTML, CSS, JS từ cơ bản đến nâng cao.")
     elif selected_topic == "🔐 An toàn thông tin":
         st.write("🔒 Các kiến thức về bảo mật, phòng chống tấn công mạng.")
@@ -51,7 +66,7 @@ if st.session_state.show_topics:
     elif selected_topic == "💬 Góc chia sẻ":
         st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
 
-# --- Trang chủ nếu chưa chọn ---
+# --- Nếu chưa bật menu: hiển thị Trang chủ mặc định ---
 else:
     st.subheader("🏠 Trang chủ")
     st.write("""
