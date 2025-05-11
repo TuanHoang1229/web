@@ -54,8 +54,6 @@ else:
     selected_topic = "🏠 Trang chủ"
 
 # --- Hiển thị nội dung từng phần ---
-
-# --- Trang chủ ---
 if selected_topic == "🏠 Trang chủ":
     st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
     st.markdown("""
@@ -87,7 +85,7 @@ Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tậ
 ---
 
 ### 🚀 Các chuyên mục nổi bật:
-- [🔑 Kiểm tra mặt khẩu]
+- [🔑 Kiểm tra mật khẩu]
 - [🔧 Thiết kế Web cơ bản]
 - [🔐 An toàn thông tin]
 - [📁 Kho tài liệu thực hành]
@@ -107,45 +105,46 @@ Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tậ
 > – **Ray Clifford**
 """)
 
-   st.markdown("""
-    <style>
-    .box {
-        background-color: #1f2a38;
-        color: white;
-        padding: 40px 30px;
-        border-radius: 10px;
-        font-size: 16px;
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-    .box h3 {
-        margin-top: 0;
-        font-weight: bold;
-    }
-    .contact-item {
-        margin-bottom: 10px;
-    }
-    .stTextArea > div > textarea {
-        background-color: #ffffff10;
-        color: white;
-    }
-    .stButton > button {
-        background-color: #00c4cc;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 20px;
-    }
-    .stButton > button:hover {
-        background-color: #009fa3;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    # CSS tùy chỉnh
+    st.markdown("""
+        <style>
+        .box {
+            background-color: #1f2a38;
+            color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+        .box h3 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .stTextArea > div > textarea {
+            background-color: #ffffff10;
+            color: white;
+        }
+        .stButton > button {
+            background-color: #00c4cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .stButton > button:hover {
+            background-color: #009fa3;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     # Nội dung "Liên hệ + Góp ý"
     st.markdown('<div class="box">', unsafe_allow_html=True)
@@ -168,7 +167,6 @@ Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tậ
             st.warning("⚠️ Vui lòng nhập nội dung góp ý.")
     
     st.markdown('</div>', unsafe_allow_html=True)
-
 
 
 # --- Kiểm tra mật khẩu ---
