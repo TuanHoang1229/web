@@ -75,7 +75,7 @@ st.image(
 # --- Nếu chưa bật menu: hiển thị Trang chủ mặc định ---
 
 st.subheader("🏠 Trang chủ")
- st.write("""
+st.write("""
     👋 Chào mừng bạn đến với **Tin Học Online**!
 
      Đây là nền tảng học tập các kiến thức cơ bản và nâng cao về:
