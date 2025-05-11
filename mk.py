@@ -61,13 +61,50 @@ elif selected_topic == "🔑 Kiểm tra mật khẩu":
     def calculate_strength(password):
         score = 0
         if len(password) >= 8: score += 1
+        if len(password) >= 12: score += 5
         if len(password) >= 12: score += 1
         if any(c.isdigit() for c in password): score += 1
         if any(c.islower() for c in password): score += 1
         if any(c.isupper() for c in password): score += 1
+        if any(c.isdigit() for c in password): score += 1
         if any(c in string.punctuation for c in password): score += 1
         return score
 
+    def strength_text(score):
+        if score <= 2: return "❌ Yếu", "red"
+        elif score <= 4: return "⚠️ Trung bình", "orange"
+        else: return "✅ Mạnh", "green"
+
+    tab1, tab2 = st.tabs(["🔎 Kiểm tra mật khẩu", "⚙️ Tạo mật khẩu mới"])
+
+    with tab1:
+        pwd = st.text_input("Nhập mật khẩu:", type="password")
+        if pwd:
+            score = calculate_strength(pwd)
+            text, color = strength_text(score)
+            st.markdown(f"**Đánh giá:** <span style='color:{color}'>{text}</span>", unsafe_allow_html=True)
+            st.progress(score * 20)
+
+    with tab2:
+        length = st.slider("Chọn độ dài mật khẩu", 6, 50, 12)
+        if st.button("🎲 Tạo mật khẩu"):
+            chars = string.ascii_letters + string.digits + string.punctuation
+            gen_pwd = ''.join(random.choice(chars) for _ in range(length))
+            st.text_input("🔑 Mật khẩu đã tạo:", gen_pwd)
+
+            score = calculate_strength(gen_pwd)
+            text, color = strength_text(score)
+            st.markdown(f"**Độ mạnh:** <span style='color:{color}'>{text}</span>", unsafe_allow_html=True)
+            st.progress(score * 20)
+
+            if st.button("💾 Lưu mật khẩu SHA-256"):
+                hashed = hashlib.sha256(gen_pwd.encode()).hexdigest()
+                with open("saved_passwords.txt", "a") as f:
+                    f.write(hashed + "\n")
+                st.success("Đã lưu mật khẩu dưới dạng SHA-256!")
+
+                with open("saved_passwords.txt", "r") as f:
+                    st.download_button("📥 Tải file SHA-256", f.read(), file_name="saved_passwords.txt")
     password = st.text_input("Nhập mật khẩu của bạn để kiểm tra:", type="password")
     if password:
         strength = calculate_strength(password)
@@ -78,6 +115,7 @@ elif selected_topic == "🔑 Kiểm tra mật khẩu":
         else:
             st.success("💪 Mật khẩu mạnh")
 
+    # Tạo mật khẩu ngẫu nhiên
     if st.button("Tạo mật khẩu ngẫu nhiên"):
         generated_password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=12))
         st.write(f"🔑 Mật khẩu ngẫu nhiên: {generated_password}")
