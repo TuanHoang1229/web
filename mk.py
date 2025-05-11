@@ -26,29 +26,33 @@ with col2:
 # --- Gạch ngang ---
 st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
-# --- Nếu đang bật chuyên đề ---
+# --- Chuyên mục có thể chọn nhiều ---
+topics_list = [
+    "🌐 Thiết kế Web cơ bản",
+    "🔐 An toàn thông tin",
+    "📂 Kho tài liệu",
+    "🧠 Trắc nghiệm",
+    "💬 Góc chia sẻ"
+]
+
+# --- Nếu bật chuyên đề: hiển thị multiselect ---
 if st.session_state.show_topics:
-    topic = st.radio("📂 Danh sách chuyên đề:", [
-        "🌐 Thiết kế Web cơ bản",
-        "🔐 An toàn thông tin",
-        "📂 Kho tài liệu",
-        "🧠 Trắc nghiệm",
-        "💬 Góc chia sẻ"
-    ])
+    selected_topics = st.multiselect("📂 Chọn các chuyên đề bạn quan tâm:", topics_list)
 
-    st.subheader(topic)
-    if topic == "🌐 Thiết kế Web cơ bản":
-        st.write("Hướng dẫn HTML, CSS, JS...")
-    elif topic == "🔐 An toàn thông tin":
-        st.write("Kiến thức bảo mật...")
-    elif topic == "📂 Kho tài liệu":
-        st.write("Tài liệu, giáo trình...")
-    elif topic == "🧠 Trắc nghiệm":
-        st.write("Luyện tập trắc nghiệm online.")
-    elif topic == "💬 Góc chia sẻ":
-        st.write("Nơi trao đổi, chia sẻ kinh nghiệm.")
+    for topic in selected_topics:
+        st.subheader(topic)
+        if topic == "🌐 Thiết kế Web cơ bản":
+            st.write("📘 Hướng dẫn HTML, CSS, JS từ cơ bản đến nâng cao.")
+        elif topic == "🔐 An toàn thông tin":
+            st.write("🔒 Các kiến thức về bảo mật, phòng chống tấn công mạng.")
+        elif topic == "📂 Kho tài liệu":
+            st.write("📁 Tài liệu tham khảo, giáo trình, bài giảng...")
+        elif topic == "🧠 Trắc nghiệm":
+            st.write("📝 Các bộ đề trắc nghiệm luyện tập.")
+        elif topic == "💬 Góc chia sẻ":
+            st.write("💡 Chia sẻ kinh nghiệm, hỏi đáp, thảo luận học thuật.")
 
-# --- Nếu chưa bật: Trang chủ mặc định ---
+# --- Trang chủ nếu chưa chọn ---
 else:
     st.subheader("🏠 Trang chủ")
     st.write("""
@@ -63,4 +67,3 @@ else:
 
         👉 Hãy nhấn **📚 Chọn chuyên đề** ở góc trên bên phải để bắt đầu!
     """)
-
