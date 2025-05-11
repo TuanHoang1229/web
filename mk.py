@@ -26,6 +26,16 @@ with col2:
 # --- Gạch ngang ---
 st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
 
+# --- Danh sách chuyên đề (có cả Trang chủ) ---
+topics_list = [
+    "🏠 Trang chủ",
+    "🌐 Thiết kế Web cơ bản",
+    "🔐 An toàn thông tin",
+    "📂 Kho tài liệu",
+    "🧠 Trắc nghiệm",
+    "💬 Góc chia sẻ"
+]
+
 # --- Giao diện chọn chuyên đề ---
 if st.session_state.show_topics:
     selected_topic = st.selectbox("📂 Chọn chuyên đề:", topics_list)
@@ -61,16 +71,6 @@ st.image(
     use_container_width=True,
     caption="Trường THPT Lương Văn Tri"
 )
-
-# --- Danh sách chuyên đề (có cả Trang chủ) ---
-topics_list = [
-    "🏠 Trang chủ",
-    "🌐 Thiết kế Web cơ bản",
-    "🔐 An toàn thông tin",
-    "📂 Kho tài liệu",
-    "🧠 Trắc nghiệm",
-    "💬 Góc chia sẻ"
-]
 
 # --- Nếu chưa bật menu: hiển thị Trang chủ mặc định ---
 else:
