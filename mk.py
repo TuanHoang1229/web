@@ -320,7 +320,7 @@ with tabs[3]:
     st.markdown("""
     <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
     
-    <h3>🔐 Kiến thức cơ bản:</h3>
+    <h3>🛡️ Kiến thức cơ bản:</h3>
     <ul>
       <li><strong>Mật khẩu mạnh</strong> nên có chữ hoa, chữ thường, số và ký tự đặc biệt.</li>
       <li><strong>Không chia sẻ mật khẩu</strong> qua email hay tin nhắn.</li>
