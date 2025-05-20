@@ -1382,68 +1382,85 @@ with tabs[4]:
     
 
 
-    # --- Website học lập trình (quốc tế) ---
-    st.subheader("🌐 Website học lập trình")
     st.markdown("""
-    - [W3Schools](https://www.w3schools.com/) – Học lập trình cơ bản HTML, CSS, JS,...
-    - [GeeksforGeeks](https://www.geeksforgeeks.org/) – Thuật toán, cấu trúc dữ liệu, phỏng vấn.
-    - [FreeCodeCamp](https://www.freecodecamp.org/) – Khóa học miễn phí có chứng chỉ.
-    - [Coursera](https://www.coursera.org/) – Khóa học từ đại học lớn (một số miễn phí).
-    - [Codecademy](https://www.codecademy.com/) – Học lập trình tương tác.
-    """)
-
-    # --- Website tiếng Việt ---
-    st.subheader("🇻🇳 Website tiếng Việt")
-    st.markdown("""
-    - [HowKteam.vn](https://www.howkteam.vn/) – Học C#, Python, Android bằng tiếng Việt.
-    - [Viblo.asia](https://viblo.asia/) – Bài viết kỹ thuật, lập trình, DevOps,...
-    - [Hoclaptrinh.vn](https://hoclaptrinh.vn/) – Khóa học lập trình cơ bản – nâng cao.
-    - [Codelearn.io](https://codelearn.io/) – Học lập trình qua thử thách (game hoá).
-    """)
-
-    # --- Sách & nguồn mở ---
-    st.subheader("📘 Sách lập trình miễn phí")
-    st.markdown("""
-    - [Free Programming Books (GitHub)](https://github.com/EbookFoundation/free-programming-books) – Hàng nghìn sách lập trình miễn phí, có cả tiếng Việt.
-    - [O'Reilly Online Learning](https://www.oreilly.com/) – Thư viện sách lập trình cao cấp (trả phí).
-    """)
-
-    st.subheader("🖥️ Một số trang web tự học")
-    st.markdown("""
-    - [Học Mãi](https://hocmai.vn/)
-    - [Học 10](https://www.hoc10.vn/)
-    - [Học 24h](https://hoc24.vn/)
-    """)
-
-    # --- Gợi ý ---
-    st.markdown("---")
-    st.info("💡 Mẹo: Dành 15 phút mỗi ngày học lập trình từ W3Schools hoặc FreeCodeCamp để duy trì thói quen!")
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    
+    <h3>🌐 Website học lập trình (quốc tế)</h3>
+    <ul>
+      <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a> – Học lập trình cơ bản HTML, CSS, JS,...</li>
+      <li><a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a> – Thuật toán, cấu trúc dữ liệu, phỏng vấn.</li>
+      <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a> – Khóa học miễn phí có chứng chỉ.</li>
+      <li><a href="https://www.coursera.org/" target="_blank">Coursera</a> – Khóa học từ đại học lớn (một số miễn phí).</li>
+      <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a> – Học lập trình tương tác.</li>
+    </ul>
+    
+    <h3>🇻🇳 Website tiếng Việt</h3>
+    <ul>
+      <li><a href="https://www.howkteam.vn/" target="_blank">HowKteam.vn</a> – Học C#, Python, Android bằng tiếng Việt.</li>
+      <li><a href="https://viblo.asia/" target="_blank">Viblo.asia</a> – Bài viết kỹ thuật, lập trình, DevOps,...</li>
+      <li><a href="https://hoclaptrinh.vn/" target="_blank">Hoclaptrinh.vn</a> – Khóa học lập trình cơ bản – nâng cao.</li>
+      <li><a href="https://codelearn.io/" target="_blank">Codelearn.io</a> – Học lập trình qua thử thách (game hoá).</li>
+    </ul>
+    
+    <h3>📘 Sách lập trình miễn phí</h3>
+    <ul>
+      <li><a href="https://github.com/EbookFoundation/free-programming-books" target="_blank">Free Programming Books (GitHub)</a> – Hàng nghìn sách lập trình miễn phí, có cả tiếng Việt.</li>
+      <li><a href="https://www.oreilly.com/" target="_blank">O'Reilly Online Learning</a> – Thư viện sách lập trình cao cấp (trả phí).</li>
+    </ul>
+    
+    <h3>🖥️ Một số trang web tự học</h3>
+    <ul>
+      <li><a href="https://hocmai.vn/" target="_blank">Học Mãi</a></li>
+      <li><a href="https://www.hoc10.vn/" target="_blank">Học 10</a></li>
+      <li><a href="https://hoc24.vn/" target="_blank">Học 24h</a></li>
+    </ul>
+    
+    <hr>
+    
+    <blockquote style="border-left: 4px solid #00aaff; padding-left: 10px; margin-top: 20px;">
+    💡 <strong>Mẹo:</strong> Dành <strong>15 phút mỗi ngày</strong> học lập trình từ <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> hoặc <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a> để duy trì thói quen!
+    </blockquote>
+    
+    </div>
+    """, unsafe_allow_html=True)
 
 # --- Góc chia sẻ ---
 with tabs[5]:
     st.header("📬 Góc chia sẻ - Gửi bài thực hành")
     
     st.markdown("""
-    **Chào bạn!** Đây là nơi bạn có thể gửi các bài thực hành, đề tài hoặc sản phẩm bạn đã hoàn thành trong quá trình học.
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
     
-    Bằng cách gửi bài qua Google Forms, bạn sẽ nhận được:
-    - **Phản hồi từ giáo viên** giúp cải thiện kỹ năng.
-    - **Cơ hội nhận xét và đánh giá** từ cộng đồng.
-    - **Cải thiện kỹ năng thực hành** qua các bài tập thực tế.
+    <p><strong>👋 Chào bạn!</strong> Đây là nơi bạn có thể gửi các bài thực hành, đề tài hoặc sản phẩm bạn đã hoàn thành trong quá trình học.</p>
     
-    Để gửi bài, vui lòng điền vào biểu mẫu dưới đây.
-    """)
-
-    st.markdown("### 📝 Biểu mẫu gửi bài thực hành:")
-    st.markdown("[📎 Gửi bài qua Google Forms](https://forms.gle/dwQnECTG76BQAUXE6)")
-
-    st.markdown("""
-    **Lưu ý:**
-    - Hãy chắc chắn rằng bài thực hành của bạn đã được hoàn thiện và kiểm tra kỹ lưỡng trước khi gửi.
-    - Nếu bạn có bất kỳ câu hỏi nào hoặc gặp phải vấn đề khi gửi bài, đừng ngần ngại liên hệ với hỗ trợ kỹ thuật.
+    <p>Khi gửi bài qua Google Forms, bạn sẽ nhận được:</p>
+    <ul>
+      <li><strong>Phản hồi từ giáo viên</strong> giúp cải thiện kỹ năng.</li>
+      <li><strong>Cơ hội nhận xét và đánh giá</strong> từ cộng đồng.</li>
+      <li><strong>Cải thiện kỹ năng thực hành</strong> qua các bài tập thực tế.</li>
+    </ul>
     
-    **Chúc bạn học tốt và đạt kết quả xuất sắc!**
-    """)
+    <p>Để gửi bài, vui lòng điền vào biểu mẫu dưới đây.</p>
+    
+    <h3>📝 Biểu mẫu gửi bài thực hành:</h3>
+    <p>
+      <a href="https://forms.gle/dwQnECTG76BQAUXE6" target="_blank" style="font-weight: bold; color: #0066cc;">
+        📎 Gửi bài qua Google Forms
+      </a>
+    </p>
+    
+    <hr>
+    
+    <p><strong>Lưu ý:</strong></p>
+    <ul>
+      <li>Hãy chắc chắn rằng bài thực hành của bạn đã được hoàn thiện và kiểm tra kỹ lưỡng trước khi gửi.</li>
+      <li>Nếu bạn có bất kỳ câu hỏi nào hoặc gặp vấn đề khi gửi bài, đừng ngần ngại liên hệ với <em>hỗ trợ kỹ thuật</em>.</li>
+    </ul>
+    
+    <p><strong>🎓 Chúc bạn học tốt và đạt kết quả xuất sắc!</strong></p>
+    
+    </div>
+    """, unsafe_allow_html=True)
 
 # --- Kiểm tra mật khẩu ---
 with tabs[1]:
@@ -1473,14 +1490,21 @@ with tabs[1]:
     with tab1:
         st.markdown("### 🔍 Kiểm tra độ mạnh mật khẩu:")
         st.markdown("""
-        Mật khẩu mạnh là mật khẩu có độ dài tối thiểu 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.
-        """)
-        st.markdown("""
-        <div style='text-align: center; font-size:16px;'>
-            <p><strong>Vậy mật khẩu của bạn đã đủ mạnh chưa?</strong></p>
-            <p>Nhập mật khẩu của bạn vào ô bên dưới để kiểm tra độ mạnh.</p>
+        <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+            <p>
+                🔐 <strong>Mật khẩu mạnh</strong> là mật khẩu có độ dài tối thiểu <strong>8 ký tự</strong>, 
+                bao gồm: chữ hoa, chữ thường, số và ký tự đặc biệt.
+            </p>
         </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
+        
+        # Câu hỏi trung tâm căn giữa
+        st.markdown("""
+        <div style='text-align: center; font-size: 18px; font-family: "Segoe UI", sans-serif; margin-top: 20px;'>
+            <p><strong>🧐 Vậy mật khẩu của bạn đã đủ mạnh chưa?</strong></p>
+            <p>Hãy nhập mật khẩu vào ô bên dưới để kiểm tra độ mạnh.</p>
+        </div>
+        """, unsafe_allow_html=True)
     
         pwd = st.text_input("Nhập mật khẩu:", type="password")
         if st.button("Kiểm Tra"):
@@ -1494,10 +1518,11 @@ with tabs[1]:
                 st.warning("Vui lòng nhập mật khẩu để kiểm tra.")  # Nếu mật khẩu không được nhập
                 
         st.markdown("""
-    <div style='margin-top: 10px; font-size: 15px;'>
+    <div style='margin-top: 10px; font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.6;'>
         <p><strong>🔐 Mật khẩu bị đánh cắp là nguy cơ to lớn nhất</strong></p>
         <p>80% các vụ rò rỉ dữ liệu xảy ra do mật khẩu bị tấn công, và những sự cố này đã gây ra thất thoát hàng triệu đô la cho nhiều công ty. Theo IBM, trung bình một vụ rò rỉ dữ liệu gây thiệt hại lên đến <strong>3.86 triệu đô la</strong> trong năm 2020.</p>
         <p>Đối với cá nhân, mật khẩu bị lộ có thể khiến người dùng trở thành nạn nhân của các vụ lừa đảo, đánh cắp danh tính, v.v.</p>
+    
         <p><strong>Tại sao cần kiểm tra độ mạnh mật khẩu?</strong></p>
         <p>Để lộ thông tin đăng nhập là nguyên nhân thường thấy trong các vụ đánh cắp danh tính và rò rỉ dữ liệu. Trong bối cảnh các vụ tấn công mạng ngày càng gia tăng, bạn cần phải nâng cấp bảo mật cho mật khẩu của mình bằng cách kiểm tra độ mạnh mật khẩu.</p>
     </div>
@@ -1507,8 +1532,10 @@ with tabs[1]:
     with tab2:
         st.header("🔑 Tạo mật khẩu mạnh:")
         st.markdown("""
-        Sử dụng công cụ này để tạo mật khẩu ngẫu nhiên. Mật khẩu mạnh kết hợp chữ hoa, thường, số và ký tự đặc biệt.
-        """)
+        <div style='font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.5;'>
+            Sử dụng công cụ này để tạo mật khẩu ngẫu nhiên. Mật khẩu mạnh kết hợp chữ hoa, thường, số và ký tự đặc biệt.
+        </div>
+        """, unsafe_allow_html=True)
     
         length = st.slider("Chọn độ dài mật khẩu", 6, 50, 12)
     
@@ -1538,16 +1565,16 @@ with tabs[1]:
                 st.download_button("📥 Tải file mật khẩu", buffer, file_name="saved_password.txt", mime="text/plain")
             
         st.markdown("""
-            <div style='margin-top: 30px; font-size: 15px;'>
-                <p><strong>💡 Mẹo tạo mật khẩu mạnh để giữ an toàn cho tài khoản:</strong></p>
-                <ol>
-                    <li><strong>Không sử dụng tên tuổi, ngày tháng năm sinh trong mật khẩu:</strong> Những thông tin này dễ bị đoán trúng. Hãy dùng cụm từ cá nhân khó đoán như câu trong bài hát yêu thích hoặc tên thú cưng.</li>
-                    <li><strong>Không sử dụng các cụm từ phổ thông dễ đoán:</strong> Tránh các mật khẩu như "123456", "password", "iloveyou",...</li>
-                    <li><strong>Mật khẩu bao gồm chữ cái in thường, in hoa, số, ký tự đặc biệt:</strong> Ví dụ: <code>P@ssw0rd!2024</code></li>
-                    <li><strong>Mật khẩu có độ dài tối thiểu 12 ký tự:</strong> Độ dài càng lớn, mật khẩu càng khó bị phá.</li>
-                </ol>
-            </div>
-            """, unsafe_allow_html=True)
+        <div style='margin-top: 30px; font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.5;'>
+            <p><strong>💡 Mẹo tạo mật khẩu mạnh để giữ an toàn cho tài khoản:</strong></p>
+            <ol>
+                <li><strong>Không sử dụng tên tuổi, ngày tháng năm sinh trong mật khẩu:</strong> Những thông tin này dễ bị đoán trúng. Hãy dùng cụm từ cá nhân khó đoán như câu trong bài hát yêu thích hoặc tên thú cưng.</li>
+                <li><strong>Không sử dụng các cụm từ phổ thông dễ đoán:</strong> Tránh các mật khẩu như "123456", "password", "iloveyou",...</li>
+                <li><strong>Mật khẩu bao gồm chữ cái in thường, in hoa, số, ký tự đặc biệt:</strong> Ví dụ: <code>P@ssw0rd!2024</code></li>
+                <li><strong>Mật khẩu có độ dài tối thiểu 12 ký tự:</strong> Độ dài càng lớn, mật khẩu càng khó bị phá.</li>
+            </ol>
+        </div>
+        """, unsafe_allow_html=True)
 
 
 # 🔓 Đăng nhập (tab 6)
