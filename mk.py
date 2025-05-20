@@ -318,39 +318,48 @@ with tabs[3]:
 
     # Kiến thức cơ bản
     st.markdown("""
-    ### Kiến thức cơ bản:
-    - **Mật khẩu mạnh** nên có chữ hoa, chữ thường, số và ký tự đặc biệt.
-    - **Không chia sẻ mật khẩu** qua email hay tin nhắn.
-    - **Không nhấn vào liên kết lạ** trong email từ người lạ.
-    - **Cập nhật phần mềm thường xuyên** để tránh lỗ hổng bảo mật.
-    """)
-
-    # Tình huống thực tế
-    st.markdown("""
-    ### Tình huống:
-    Bạn nhận được email từ một địa chỉ lạ với tiêu đề "Bạn đã trúng thưởng!" và tệp đính kèm là file .exe.  
-    **Bạn nên làm gì?**
-    - Không mở tệp đính kèm  
-    - Kiểm tra địa chỉ người gửi  
-    - Báo cáo cho giáo viên hoặc quản trị mạng
-    """)
-
-    # Danh sách mẹo
-    st.markdown("""
-    ### Mẹo an toàn khi dùng Internet:
-    - Sử dụng xác thực 2 yếu tố (2FA)
-    - Không dùng chung một mật khẩu cho nhiều tài khoản
-    - Không dùng Wi-Fi công cộng cho việc quan trọng
-    - Đăng xuất sau khi dùng xong máy tính công cộng
-    """)
-
-    # Học thêm
-    st.markdown("""
-    ### Một số cách để phòng tránh:
-    - [Video: Làm sao để an toàn trên mạng?](https://www.youtube.com/watch?v=1I4FZ6Nkm4A)
-    - [Cẩm nang an toàn thông tin của VNPT](https://attt.vnpt.vn)
-    """)
-
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    
+    <h3>🔐 Kiến thức cơ bản:</h3>
+    <ul>
+      <li><strong>Mật khẩu mạnh</strong> nên có chữ hoa, chữ thường, số và ký tự đặc biệt.</li>
+      <li><strong>Không chia sẻ mật khẩu</strong> qua email hay tin nhắn.</li>
+      <li><strong>Không nhấn vào liên kết lạ</strong> trong email từ người lạ.</li>
+      <li><strong>Cập nhật phần mềm thường xuyên</strong> để tránh lỗ hổng bảo mật.</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>📧 Tình huống:</h3>
+    <p>Bạn nhận được email từ một địa chỉ lạ với tiêu đề <strong>"Bạn đã trúng thưởng!"</strong> và tệp đính kèm là file <code>.exe</code>.<br>
+    <strong>Bạn nên làm gì?</strong></p>
+    <ul>
+      <li>❌ Không mở tệp đính kèm</li>
+      <li>🔍 Kiểm tra địa chỉ người gửi</li>
+      <li>📢 Báo cáo cho giáo viên hoặc quản trị mạng</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>💡 Mẹo an toàn khi dùng Internet:</h3>
+    <ul>
+      <li>✅ Sử dụng xác thực 2 yếu tố (2FA)</li>
+      <li>🚫 Không dùng chung một mật khẩu cho nhiều tài khoản</li>
+      <li>📶 Không dùng Wi-Fi công cộng cho việc quan trọng</li>
+      <li>🔒 Đăng xuất sau khi dùng xong máy tính công cộng</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>📚 Một số cách để phòng tránh:</h3>
+    <ul>
+      <li>🎥 <a href="https://www.youtube.com/watch?v=1I4FZ6Nkm4A" target="_blank">Video: Làm sao để an toàn trên mạng?</a></li>
+      <li>📘 <a href="https://attt.vnpt.vn" target="_blank">Cẩm nang an toàn thông tin của VNPT</a></li>
+    </ul>
+    
+    </div>
+    """, unsafe_allow_html=True)
+    
     # Trắc nghiệm nhỏ
     st.markdown("### 🧠 Trắc nghiệm nhanh:")
 
@@ -403,16 +412,24 @@ with tabs[4]:
     st.subheader("📖 Sách lật trang")
 
     st.markdown("""
-    Sách lật trang là dạng tài liệu điện tử mô phỏng trải nghiệm lật trang như sách giấy, giúp bạn dễ dàng xem trực tuyến trên mọi thiết bị mà không cần tải về.
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
     
-    Mời bạn tham khảo các sách lật trang môn Tin học dành cho học sinh THPT lớp 10, 11 và 12 dưới đây:
+    <p>Sách lật trang là dạng tài liệu điện tử mô phỏng trải nghiệm <strong>lật trang như sách giấy</strong>, giúp bạn dễ dàng xem trực tuyến trên mọi thiết bị mà không cần tải về.</p>
     
-    - [📘 Tin Học 10](https://online.fliphtml5.com/irxmh/xdee/)
-    - [📗 Tin Học 11](https://online.fliphtml5.com/arbaq/fdvz/)
-    - [📙 Tin Học 12](https://online.fliphtml5.com/arbaq/gelv/)
+    <p>Mời bạn tham khảo các sách lật trang môn <strong>Tin học dành cho học sinh THPT lớp 10, 11 và 12</strong> dưới đây:</p>
     
-    > 💡 **Mẹo:** Bạn có thể phóng to, tìm kiếm từ khóa, và xem toàn màn hình để học dễ dàng hơn!
-    """)
+    <ul>
+      <li>📘 <a href="https://online.fliphtml5.com/irxmh/xdee/" target="_blank">Tin Học 10</a></li>
+      <li>📗 <a href="https://online.fliphtml5.com/arbaq/fdvz/" target="_blank">Tin Học 11</a></li>
+      <li>📙 <a href="https://online.fliphtml5.com/arbaq/gelv/" target="_blank">Tin Học 12</a></li>
+    </ul>
+    
+    <blockquote>
+      💡 <strong>Mẹo:</strong> Bạn có thể <em>phóng to</em>, <em>tìm kiếm từ khóa</em>, và <em>xem toàn màn hình</em> để học dễ dàng hơn!
+    </blockquote>
+    
+    </div>
+    """, unsafe_allow_html=True)
 
 
 
