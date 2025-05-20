@@ -56,54 +56,69 @@ else:
 # --- Hiển thị nội dung từng phần ---
 if selected_topic == "🏠 Trang chủ":
     st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
+
     st.markdown("""
-### 💡 Giới thiệu:
-Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tập và thực hành các kỹ năng **Tin học hiện đại** như:
+<div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
 
-- Thiết kế Web cơ bản với HTML/CSS
-- An toàn thông tin
-- Kiểm tra mật khẩu
+<h2>💡 Giới thiệu:</h2>
+<p>Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tập và thực hành các kỹ năng <strong>Tin học hiện đại</strong> như:</p>
+<ul>
+<li>Kiểm tra độ an toàn của mật khẩu</li>
+<li>Thiết kế Web cơ bản với HTML/CSS</li>
+<li>An toàn thông tin</li>
+<li>Tự học và kiểm tra kiến thức đã học</li>
+</ul>
 
----
+<hr>
 
-### 🎯 Mục tiêu:
-- Học qua thực hành
-- Nâng cao tư duy logic và kỹ năng sử dụng máy tính
-- Tự tin ứng dụng công nghệ trong học tập và đời sống
+<h3>🎯 Mục tiêu:</h3>
+<ul>
+<li>Học qua thực hành</li>
+<li>Nâng cao tư duy logic và kỹ năng sử dụng máy tính</li>
+<li>Tự tin ứng dụng công nghệ trong học tập và đời sống</li>
+</ul>
 
----
+<hr>
 
-### 🗺️ Gợi ý phương pháp học tập:
-1. **Bắt đầu với lý thuyết cơ bản**
-2. **Xem video và làm bài tập**
-3. **Làm trắc nghiệm ôn tập**
-4. **Chia sẻ bài thực hành của bạn**
-5. **Luyện kỹ các năng an toàn**
-6. **Tăng cường mật khẩu của bạn**  
-**Lưu ý:** Bạn có thể chia sẻ các ý kiến cá nhân trong form nhé!
+<h3>🗺️ Gợi ý phương pháp học tập:</h3>
+<ol>
+<li><strong>Bắt đầu với lý thuyết cơ bản</strong></li>
+<li><strong>Xem video và làm bài tập</strong></li>
+<li><strong>Làm trắc nghiệm ôn tập</strong></li>
+<li><strong>Chia sẻ bài thực hành của bạn</strong></li>
+<li><strong>Luyện kỹ các năng an toàn</strong></li>
+<li><strong>Tăng cường mật khẩu của bạn</strong></li>
+</ol>
+<p><strong>Lưu ý:</strong> Bạn có thể chia sẻ các ý kiến cá nhân trong form nhé!</p>
 
----
+<hr>
 
-### 🚀 Các chuyên mục nổi bật:
-- [🔑 Kiểm tra mật khẩu]
-- [🔧 Thiết kế Web cơ bản]
-- [🔐 An toàn thông tin]
-- [📁 Kho tài liệu thực hành]
-- [🧠 Trắc nghiệm tự luyện]
-- [💬 Góc chia sẻ bài làm]
+<h3>🚀 Các chuyên mục nổi bật:</h3>
+<ul>
+<li>🔑 Kiểm tra mật khẩu</li>
+<li>🔧 Thiết kế Web cơ bản</li>
+<li>🔐 An toàn thông tin</li>
+<li>📁 Kho tài liệu và trắc nghiệm tự luyện</li>
+<li>💬 Góc chia sẻ và nộp bài</li>
+</ul>
 
----
+<hr>
 
-###  Hướng dẫn:
-- Chọn các chuyên mục ở đầu trang.
-- Mỗi mục có video, tài liệu và bài tập kèm theo.
-- Đừng quên làm trắc nghiệm để kiểm tra kiến thức nhé!
+<h3>Hướng dẫn:</h3>
+<ul>
+<li>Chọn các chuyên mục ở đầu trang.</li>
+<li>Mỗi mục có hướng dẫn thực hiện, tài liệu và bài tập kèm theo.</li>
+<li>Đừng quên làm trắc nghiệm để kiểm tra kiến thức nhé!</li>
+</ul>
 
----
+<blockquote>
+<p><strong>“Công nghệ là công cụ. Trong việc tạo động lực và giảng dạy, giáo viên vẫn là yếu tố quan trọng nhất.”</strong><br>
+– <strong>Bill Gates</strong></p>
+</blockquote>
 
-> **“Công nghệ sẽ không thay thế giáo viên, nhưng giáo viên biết công nghệ sẽ thay thế người không biết.”**  
-> – **Ray Clifford**
-""")
+</div>
+""", unsafe_allow_html=True)
+
 
     # --- Gạch ngang ---
     st.markdown("<hr style='margin-top: 0;'>", unsafe_allow_html=True)
