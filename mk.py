@@ -143,17 +143,23 @@ with tabs[2]:
 
     # Giới thiệu kiến thức
     st.markdown("""
-    ### Giới thiệu nhanh:
-    - **HTML**: Dùng để xây dựng cấu trúc trang web.
-    - **CSS**: Dùng để tạo kiểu dáng (màu sắc, font chữ, bố cục).
-    - Một số thẻ HTML cơ bản: `<h1>`, `<p>`, `<a>`, `<img>`, `<div>`
-    - Một số thuộc tính CSS thường gặp: `color`, `font-size`, `margin`, `padding`, `background-color`
-    """)
+<div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+
+<h3>Giới thiệu nhanh:</h3>
+<ul>
+  <li><strong>HTML</strong>: Dùng để xây dựng cấu trúc trang web.</li>
+  <li><strong>CSS</strong>: Dùng để tạo kiểu dáng (màu sắc, font chữ, bố cục).</li>
+  <li>Một số thẻ HTML cơ bản: <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;div&gt;</code></li>
+  <li>Một số thuộc tính CSS thường gặp: <code>color</code>, <code>font-size</code>, <code>margin</code>, <code>padding</code>, <code>background-color</code></li>
+</ul>
+
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown("""
     <div style='margin-top: 20px;'>
         <h3 style='margin-bottom: 10px;'>📘 Cách viết web bằng HTML và CSS đơn giản, chi tiết</h3>
-        <div style='font-size: 16px; line-height: 1.6;'>
+        <div style='font-size: 18px; line-height: 1.6;'>
             <p>Nếu bạn mới học lập trình web thì hãy bắt đầu với <strong>HTML</strong> và <strong>CSS</strong>. Đây là hai ngôn ngữ cơ bản và quan trọng trong xây dựng web.</p>
             <p>Việc viết code web bằng HTML và CSS không khó, tuy nhiên nó đòi hỏi bạn cần có các kiến thức nhất định về lập trình, cụ thể:</p>
             <ul>
