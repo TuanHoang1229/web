@@ -1522,7 +1522,6 @@ with tabs[1]:
         <p><strong>🔐 Mật khẩu bị đánh cắp là nguy cơ to lớn nhất</strong></p>
         <p>80% các vụ rò rỉ dữ liệu xảy ra do mật khẩu bị tấn công, và những sự cố này đã gây ra thất thoát hàng triệu đô la cho nhiều công ty. Theo IBM, trung bình một vụ rò rỉ dữ liệu gây thiệt hại lên đến <strong>3.86 triệu đô la</strong> trong năm 2020.</p>
         <p>Đối với cá nhân, mật khẩu bị lộ có thể khiến người dùng trở thành nạn nhân của các vụ lừa đảo, đánh cắp danh tính, v.v.</p>
-    
         <p><strong>Tại sao cần kiểm tra độ mạnh mật khẩu?</strong></p>
         <p>Để lộ thông tin đăng nhập là nguyên nhân thường thấy trong các vụ đánh cắp danh tính và rò rỉ dữ liệu. Trong bối cảnh các vụ tấn công mạng ngày càng gia tăng, bạn cần phải nâng cấp bảo mật cho mật khẩu của mình bằng cách kiểm tra độ mạnh mật khẩu.</p>
     </div>
