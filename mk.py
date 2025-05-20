@@ -209,57 +209,77 @@ with tabs[2]:
 
     # Thử thách thực hành
     st.markdown("""
-    ### Thử thách thực hành
-
-    Hãy luyện tập viết HTML bằng cách thực hiện các yêu cầu sau:
-
-    #### Cơ bản:
-    - Tạo một tiêu đề lớn
-    - Viết một đoạn văn mô tả
-    - Hiển thị một hình ảnh từ Internet
-    - Chèn một liên kết đến Google
-
-    **Gợi ý:** Dùng các thẻ `<h1>`, `<p>`, `<img>`, `<a>`
-
-    ---
-
-    #### Nâng cao:
-    1. Tạo danh sách các sở thích của bạn bằng thẻ `<ul>` hoặc `<ol>`.
-    2. Tạo bảng thông tin cá nhân (Họ tên, Tuổi, Lớp) bằng thẻ `<table>`.
-    3. Thêm một nút bấm đơn giản bằng thẻ `<button>`.
-    4. Nhúng một video YouTube yêu thích bằng thẻ `<iframe>`.
-    5. Sử dụng thẻ `<div>` để tạo một khối nội dung có viền và nền màu nhẹ.
-
-    ---
-
-    **Thử thách phụ:**  
-    Hãy sáng tạo một trang giới thiệu bản thân bằng tất cả những gì bạn đã học!
-
-    > **Ghi nhớ:** Hãy lưu lại mã HTML của bạn và gửi qua form ở góc chia sẻ để nhận góp ý và đánh giá!
-    """)
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    
+    <h3>Thử thách thực hành</h3>
+    
+    <p>Hãy luyện tập viết HTML bằng cách thực hiện các yêu cầu sau:</p>
+    
+    <h4>Cơ bản:</h4>
+    <ul>
+      <li>Tạo một tiêu đề lớn</li>
+      <li>Viết một đoạn văn mô tả</li>
+      <li>Hiển thị một hình ảnh từ Internet</li>
+      <li>Chèn một liên kết đến Google</li>
+    </ul>
+    
+    <p><strong>Gợi ý:</strong> Dùng các thẻ <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code></p>
+    
+    <hr>
+    
+    <h4>Nâng cao:</h4>
+    <ol>
+      <li>Tạo danh sách các sở thích của bạn bằng thẻ <code>&lt;ul&gt;</code> hoặc <code>&lt;ol&gt;</code>.</li>
+      <li>Tạo bảng thông tin cá nhân (Họ tên, Tuổi, Lớp) bằng thẻ <code>&lt;table&gt;</code>.</li>
+      <li>Thêm một nút bấm đơn giản bằng thẻ <code>&lt;button&gt;</code>.</li>
+      <li>Nhúng một video YouTube yêu thích bằng thẻ <code>&lt;iframe&gt;</code>.</li>
+      <li>Sử dụng thẻ <code>&lt;div&gt;</code> để tạo một khối nội dung có viền và nền màu nhẹ.</li>
+    </ol>
+    
+    <hr>
+    
+    <p><strong>Thử thách phụ:</strong><br>
+    Hãy sáng tạo một trang giới thiệu bản thân bằng tất cả những gì bạn đã học!</p>
+    
+    <blockquote>
+    <p><strong>Ghi nhớ:</strong> Hãy lưu lại mã HTML của bạn và gửi qua form ở góc chia sẻ để nhận góp ý và đánh giá!</p>
+    </blockquote>
+    
+    </div>
+    """, unsafe_allow_html=True)
 
     # Học thêm
     st.markdown("""
-    ### 📘 Tài liệu Tham Khảo:
-    - [🎥 Video hướng dẫn HTML cơ bản](https://www.youtube.com/watch?v=Ke90Tje7VS0)
-    - [🌐 Tài liệu CSS tại W3Schools](https://www.w3schools.com/css/)
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
     
-    - **Một số trang web hỗ trợ lập trình cho người mới:**
-    - [ Web hỗ trợ lập trình cơ bản](https://gitiho.com/blog/cach-lap-trinh-web-html-va-css.html#tim_hieu_ve_html_va_css)
-    - [ Web hỗ trợ thiết kế giao diện](https://www.mypage.vn/thiet-ke-giao-dien-web-bang-html.html)
-
-    ---
+    <h3>📘 Tài liệu Tham Khảo:</h3>
+    <ul>
+      <li>🎥 <a href="https://www.youtube.com/watch?v=Ke90Tje7VS0" target="_blank">Video hướng dẫn HTML cơ bản</a></li>
+      <li>🌐 <a href="https://www.w3schools.com/css/" target="_blank">Tài liệu CSS tại W3Schools</a></li>
+    </ul>
     
-    ### 🐍 Cài đặt Python và Giới thiệu Streamlit
+    <p><strong>Một số trang web hỗ trợ lập trình cho người mới:</strong></p>
+    <ul>
+      <li><a href="https://gitiho.com/blog/cach-lap-trinh-web-html-va-css.html#tim_hieu_ve_html_va_css" target="_blank">Web hỗ trợ lập trình cơ bản</a></li>
+      <li><a href="https://www.mypage.vn/thiet-ke-giao-dien-web-bang-html.html" target="_blank">Web hỗ trợ thiết kế giao diện</a></li>
+    </ul>
     
-    - [⬇️ Tải Python tại python.org](https://www.python.org/downloads/)
-    - [📘 Giới thiệu và tài liệu Streamlit](https://docs.streamlit.io/)
-    - [🚀 Hướng dẫn cài đặt và chạy Streamlit](https://docs.streamlit.io/streamlit-tutorial/installation)
-
-    > **Gợi ý:** Sau khi cài đặt Python, bạn có thể dùng lệnh sau trong terminal để cài Streamlit:
-    ```bash
-    pip install streamlit
-    """)
+    <hr>
+    
+    <h3>🐍 Cài đặt Python và Giới thiệu Streamlit</h3>
+    <ul>
+      <li>⬇️ <a href="https://www.python.org/downloads/" target="_blank">Tải Python tại python.org</a></li>
+      <li>📘 <a href="https://docs.streamlit.io/" target="_blank">Giới thiệu và tài liệu Streamlit</a></li>
+      <li>🚀 <a href="https://docs.streamlit.io/streamlit-tutorial/installation" target="_blank">Hướng dẫn cài đặt và chạy Streamlit</a></li>
+    </ul>
+    
+    <blockquote>
+    <p><strong>Gợi ý:</strong> Sau khi cài đặt Python, bạn có thể dùng lệnh sau trong terminal để cài Streamlit:</p>
+    <pre><code>pip install streamlit</code></pre>
+    </blockquote>
+    
+    </div>
+    """, unsafe_allow_html=True)
 
     # Mini quiz
     st.markdown("### 🧠 Trắc nghiệm nhanh:")
