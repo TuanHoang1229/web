@@ -30,7 +30,15 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
+st.markdown("""
+    <style>
+        /* Tăng kích thước chữ cho tiêu đề tab */
+        .stTabs [role="tab"] {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # --- Tabs ---
 tabs = st.tabs([
