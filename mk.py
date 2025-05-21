@@ -56,7 +56,7 @@ tabs = st.tabs([
 with tabs[0]:
     st.title("📘 Chào mừng bạn đến với Góc Tự Học Tin học")
     st.markdown("""
-<div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+<div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
 
 <h2>💡 Giới thiệu:</h2>
 <p>Trang web này được xây dựng nhằm hỗ trợ học sinh THPT học tập và thực hành các kỹ năng <strong>Tin học hiện đại</strong> như:</p>
@@ -151,7 +151,7 @@ with tabs[2]:
 
     # Giới thiệu kiến thức
     st.markdown("""
-<div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+<div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
 
 <h3>Giới thiệu nhanh:</h3>
 <ul>
@@ -167,7 +167,7 @@ with tabs[2]:
     st.markdown("""
     <div style='margin-top: 20px;'>
         <h3 style='margin-bottom: 10px;'>📘 Cách viết web bằng HTML và CSS đơn giản, chi tiết</h3>
-        <div style='font-size: 18px; line-height: 1.6;'>
+        <div style='font-size: 20px; line-height: 1.6;'>
             <p>Nếu bạn mới học lập trình web thì hãy bắt đầu với <strong>HTML</strong> và <strong>CSS</strong>. Đây là hai ngôn ngữ cơ bản và quan trọng trong xây dựng web.</p>
             <p>Việc viết code web bằng HTML và CSS không khó, tuy nhiên nó đòi hỏi bạn cần có các kiến thức nhất định về lập trình, cụ thể:</p>
             <ul>
@@ -217,7 +217,7 @@ with tabs[2]:
 
     # Thử thách thực hành
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <h3>Thử thách thực hành</h3>
     
@@ -258,7 +258,7 @@ with tabs[2]:
 
     # Học thêm
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <h3>📘 Tài liệu Tham Khảo:</h3>
     <ul>
@@ -301,15 +301,15 @@ with tabs[2]:
     </style>
 """, unsafe_allow_html=True)
 
-    st.markdown("<div style='font-size:18px; font-weight:600;'>1. Thẻ nào dùng để tạo tiêu đề lớn nhất?</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:19px; font-weight:600;'>1. Thẻ nào dùng để tạo tiêu đề lớn nhất?</div>", unsafe_allow_html=True)
     q1 = st.radio("", ["<p>", "<h1>", "<title>", "<div>"], key="web_q1")
-    st.markdown("<div style='font-size:18px; font-weight:600;'>2. Thuộc tính nào để đổi màu chữ trong CSS?</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:19px; font-weight:600;'>2. Thuộc tính nào để đổi màu chữ trong CSS?</div>", unsafe_allow_html=True)
     q2 = st.radio("", ["font-size", "color", "background-color", "margin"], key="web_q2")
-    st.markdown("<div style='font-size:18px; font-weight:600;'>3. Thẻ nào dùng để chèn hình ảnh vào trang web?</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:19px; font-weight:600;'>3. Thẻ nào dùng để chèn hình ảnh vào trang web?</div>", unsafe_allow_html=True)
     q3 = st.radio("", ["<a>", "<img>", "<picture>", "<div>"], key="web_q3")
-    st.markdown("<div style='font-size:18px; font-weight:600;'>4. Trong CSS, thuộc tính <code>padding</code> dùng để làm gì?</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:19px; font-weight:600;'>4. Trong CSS, thuộc tính <code>padding</code> dùng để làm gì?</div>", unsafe_allow_html=True)
     q4 = st.radio("", ["Tạo khoảng cách bên trong phần tử", "Đổi màu nền", "Tạo đường viền", "Tăng cỡ chữ"], key="web_q4")
-    st.markdown("<div style='font-size:18px; font-weight:600;'>5. Đoạn mã nào tạo liên kết đến Google?</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:19px; font-weight:600;'>5. Đoạn mã nào tạo liên kết đến Google?</div>", unsafe_allow_html=True)
     q5 = st.radio("", [
         "<link href='google.com'>Google</link>", 
         "<a>Google</a>", 
@@ -341,7 +341,7 @@ with tabs[3]:
 
     # Kiến thức cơ bản
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <h3>🛡️ Kiến thức cơ bản:</h3>
     <ul>
@@ -386,24 +386,53 @@ with tabs[3]:
     # Trắc nghiệm nhỏ
     st.markdown("### 🧠 Trắc nghiệm nhanh:")
 
-    q1 = st.radio("1. Mật khẩu an toàn nên chứa?", [
-        "Ngày sinh", "Chỉ chữ thường", "Ký tự đặc biệt, số, chữ hoa thường", "Tên người thân"
+    st.markdown("""
+        <style>
+            /* Tăng cỡ chữ cho label của radio buttons */
+            .stRadio > div div {
+                font-size: 18px;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("<div style='font-size:20px; font-weight:600;'>1. Mật khẩu an toàn nên chứa?</div>", unsafe_allow_html=True)
+    q1 = st.radio("", [
+        "Ngày sinh", 
+        "Chỉ chữ thường", 
+        "Ký tự đặc biệt, số, chữ hoa thường", 
+        "Tên người thân"
     ], key="sec_q1")
-
-    q2 = st.radio("2. Khi nhận được email lạ có tệp đính kèm, bạn nên?", [
-        "Mở ngay để xem nội dung", "Xóa email và không mở tệp", "Chuyển tiếp cho bạn bè", "Trả lời email"
+    
+    st.markdown("<div style='font-size:20px; font-weight:600;'>2. Khi nhận được email lạ có tệp đính kèm, bạn nên?</div>", unsafe_allow_html=True)
+    q2 = st.radio("", [
+        "Mở ngay để xem nội dung", 
+        "Xóa email và không mở tệp", 
+        "Chuyển tiếp cho bạn bè", 
+        "Trả lời email"
     ], key="sec_q2")
-
-    q3 = st.radio("3. Cách bảo vệ tài khoản hiệu quả nhất là?", [
-        "Đặt mật khẩu dễ nhớ", "Dùng mật khẩu giống nhau cho mọi tài khoản", "Bật xác thực 2 yếu tố (2FA)", "Không đặt mật khẩu"
+    
+    st.markdown("<div style='font-size:20px; font-weight:600;'>3. Cách bảo vệ tài khoản hiệu quả nhất là?</div>", unsafe_allow_html=True)
+    q3 = st.radio("", [
+        "Đặt mật khẩu dễ nhớ", 
+        "Dùng mật khẩu giống nhau cho mọi tài khoản", 
+        "Bật xác thực 2 yếu tố (2FA)", 
+        "Không đặt mật khẩu"
     ], key="sec_q3")
-
-    q4 = st.radio("4. Khi dùng Wi-Fi công cộng, bạn nên?", [
-        "Mua hàng online và nhập thẻ ngân hàng", "Kiểm tra email cá nhân", "Tránh truy cập tài khoản quan trọng", "Tải phần mềm lạ"
+    
+    st.markdown("<div style='font-size:20px; font-weight:600;'>4. Khi dùng Wi-Fi công cộng, bạn nên?</div>", unsafe_allow_html=True)
+    q4 = st.radio("", [
+        "Mua hàng online và nhập thẻ ngân hàng", 
+        "Kiểm tra email cá nhân", 
+        "Tránh truy cập tài khoản quan trọng", 
+        "Tải phần mềm lạ"
     ], key="sec_q4")
-
-    q5 = st.radio("5. Đâu là ví dụ về phần mềm độc hại?", [
-        "Microsoft Word", "Trình duyệt Chrome", "Phần mềm virus giả mạo", "Zoom"
+    
+    st.markdown("<div style='font-size:20px; font-weight:600;'>5. Đâu là ví dụ về phần mềm độc hại?</div>", unsafe_allow_html=True)
+    q5 = st.radio("", [
+        "Microsoft Word", 
+        "Trình duyệt Chrome", 
+        "Phần mềm virus giả mạo", 
+        "Zoom"
     ], key="sec_q5")
 
     # Nút nộp bài và chấm điểm
@@ -435,7 +464,7 @@ with tabs[4]:
     st.subheader("📖 Sách lật trang")
 
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <p>Sách lật trang là dạng tài liệu điện tử mô phỏng trải nghiệm <strong>lật trang như sách giấy</strong>, giúp bạn dễ dàng xem trực tuyến trên mọi thiết bị mà không cần tải về.</p>
     
@@ -1406,7 +1435,7 @@ with tabs[4]:
 
 
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <h3>🌐 Website học lập trình (quốc tế)</h3>
     <ul>
@@ -1452,7 +1481,7 @@ with tabs[5]:
     st.header("📬 Góc chia sẻ - Gửi bài thực hành")
     
     st.markdown("""
-    <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+    <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
     
     <p><strong>👋 Chào bạn!</strong> Đây là nơi bạn có thể gửi các bài thực hành, đề tài hoặc sản phẩm bạn đã hoàn thành trong quá trình học.</p>
     
@@ -1513,7 +1542,7 @@ with tabs[1]:
     with tab1:
         st.markdown("### 🔍 Kiểm tra độ mạnh mật khẩu:")
         st.markdown("""
-        <div style='font-family: "Segoe UI", sans-serif; font-size: 18px;'>
+        <div style='font-family: "Segoe UI", sans-serif; font-size: 20px;'>
             <p>
                 🔐 <strong>Mật khẩu mạnh</strong> là mật khẩu có độ dài tối thiểu <strong>8 ký tự</strong>, 
                 bao gồm: chữ hoa, chữ thường, số và ký tự đặc biệt.
@@ -1523,7 +1552,7 @@ with tabs[1]:
         
         # Câu hỏi trung tâm căn giữa
         st.markdown("""
-        <div style='text-align: center; font-size: 18px; font-family: "Segoe UI", sans-serif; margin-top: 20px;'>
+        <div style='text-align: center; font-size: 20px; font-family: "Segoe UI", sans-serif; margin-top: 20px;'>
             <p><strong>🧐 Vậy mật khẩu của bạn đã đủ mạnh chưa?</strong></p>
             <p>Hãy nhập mật khẩu vào ô bên dưới để kiểm tra độ mạnh.</p>
         </div>
@@ -1541,7 +1570,7 @@ with tabs[1]:
                 st.warning("Vui lòng nhập mật khẩu để kiểm tra.")  # Nếu mật khẩu không được nhập
                 
         st.markdown("""
-    <div style='margin-top: 10px; font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.6;'>
+    <div style='margin-top: 10px; font-family: "Segoe UI", sans-serif; font-size: 20px; line-height: 1.6;'>
         <p><strong>🔐 Mật khẩu bị đánh cắp là nguy cơ to lớn nhất</strong></p>
         <p>80% các vụ rò rỉ dữ liệu xảy ra do mật khẩu bị tấn công, và những sự cố này đã gây ra thất thoát hàng triệu đô la cho nhiều công ty. Theo IBM, trung bình một vụ rò rỉ dữ liệu gây thiệt hại lên đến <strong>3.86 triệu đô la</strong> trong năm 2020.</p>
         <p>Đối với cá nhân, mật khẩu bị lộ có thể khiến người dùng trở thành nạn nhân của các vụ lừa đảo, đánh cắp danh tính, v.v.</p>
@@ -1554,7 +1583,7 @@ with tabs[1]:
     with tab2:
         st.header("🔑 Tạo mật khẩu mạnh:")
         st.markdown("""
-        <div style='font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.5;'>
+        <div style='font-family: "Segoe UI", sans-serif; font-size: 20px; line-height: 1.5;'>
             Sử dụng công cụ này để tạo mật khẩu ngẫu nhiên. Mật khẩu mạnh kết hợp chữ hoa, thường, số và ký tự đặc biệt.
         </div>
         """, unsafe_allow_html=True)
@@ -1587,7 +1616,7 @@ with tabs[1]:
                 st.download_button("📥 Tải file mật khẩu", buffer, file_name="saved_password.txt", mime="text/plain")
             
         st.markdown("""
-        <div style='margin-top: 30px; font-family: "Segoe UI", sans-serif; font-size: 18px; line-height: 1.5;'>
+        <div style='margin-top: 30px; font-family: "Segoe UI", sans-serif; font-size: 20px; line-height: 1.5;'>
             <p><strong>💡 Mẹo tạo mật khẩu mạnh để giữ an toàn cho tài khoản:</strong></p>
             <ol>
                 <li><strong>Không sử dụng tên tuổi, ngày tháng năm sinh trong mật khẩu:</strong> Những thông tin này dễ bị đoán trúng. Hãy dùng cụm từ cá nhân khó đoán như câu trong bài hát yêu thích hoặc tên thú cưng.</li>
