@@ -292,6 +292,15 @@ with tabs[2]:
     # Mini quiz
     st.markdown("### 🧠 Trắc nghiệm nhanh:")
 
+    st.markdown("""
+    <style>
+        /* Tăng cỡ chữ cho label của radio buttons */
+        .stRadio > div div {
+            font-size: 18px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
     q1 = st.radio("1. Thẻ nào dùng để tạo tiêu đề lớn nhất?", ["<p>", "<h1>", "<title>", "<div>"], key="web_q1")
     q2 = st.radio("2. Thuộc tính nào để đổi màu chữ trong CSS?", ["font-size", "color", "background-color", "margin"], key="web_q2")
     q3 = st.radio("3. Thẻ nào dùng để chèn hình ảnh vào trang web?", ["<a>", "<img>", "<picture>", "<div>"], key="web_q3")
