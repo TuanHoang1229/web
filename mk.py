@@ -32,14 +32,13 @@ st.markdown("""
 
 st.markdown("""
     <style>
-        /* Chọn đúng class của tab và tăng font-size */
-        div[data-baseweb="tab"] button {
-            font-size: 18px !important;
-            font-weight: 600 !important;
+        /* Tăng kích thước chữ của tiêu đề tab */
+        button[data-baseweb="tab"] > div[data-testid="stMarkdownContainer"] > p {
+            font-size: 40px;
         }
     </style>
-""", unsafe_allow_html=True)
-
+    """, unsafe_allow_html=True)
+    
 # --- Tabs ---
 tabs = st.tabs([
     "🏠 Trang chủ",
