@@ -34,7 +34,7 @@ st.markdown("""
     <style>
         /* Tăng kích thước chữ cho tiêu đề tab */
         .stTabs [role="tab"] {
-            font-size: 18px;
+            font-size: 40px;
             font-weight: 600;
         }
     </style>
