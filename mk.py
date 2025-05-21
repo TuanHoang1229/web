@@ -32,10 +32,10 @@ st.markdown("""
 
 st.markdown("""
     <style>
-        /* Tăng kích thước chữ cho tiêu đề tab */
-        .stTabs [role="tab"] {
-            font-size: 40px;
-            font-weight: 600;
+        /* Chọn đúng class của tab và tăng font-size */
+        div[data-baseweb="tab"] button {
+            font-size: 18px !important;
+            font-weight: 600 !important;
         }
     </style>
 """, unsafe_allow_html=True)
