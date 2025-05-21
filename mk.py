@@ -6,7 +6,7 @@ import io
 from PIL import Image
 
 # --- Cấu hình trang ---
-st.set_page_config(page_title="Tin Học LVT", layout="wide")
+st.set_page_config(page_title="web test", layout="wide")
 
 # --- Logo & Tiêu đề ---
 logo_url = "https://raw.githubusercontent.com/TuanHoang1229/web2/refs/heads/main/IMG_2984.png"
@@ -14,7 +14,7 @@ st.markdown(f"""
     <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
         <div style="display: flex; align-items: center;">
             <img src="{logo_url}" alt="Logo" width="60" style="margin-right: 10px;">
-            <h2 style="margin: 0; color: #40E0D0;">Tin Học LVT</h2>
+            <h2 style="margin: 0; color: #40E0D0;">Tin Học LVT TEST </h2>
         </div>
     </div>
     <hr style="margin-top: 0;">
