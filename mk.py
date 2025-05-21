@@ -366,12 +366,16 @@ with tabs[3]:
     
     <h3>💡 Mẹo an toàn khi dùng Internet:</h3>
     <ul>
-      <li>✅ Sử dụng xác thực 2 yếu tố (2FA)</li>
-      <li>🚫 Không dùng chung một mật khẩu cho nhiều tài khoản</li>
-      <li>📶 Không dùng Wi-Fi công cộng cho việc quan trọng</li>
-      <li>🔒 Đăng xuất sau khi dùng xong máy tính công cộng</li>
+      <li>🔑 <strong>1. Sử dụng trình quản lý mật khẩu để an toàn trên internet:</strong> Trình quản lý mật khẩu như Google Password Manager giúp tạo, lưu và điền mật khẩu an toàn, tránh việc phải ghi nhớ từng mật khẩu riêng lẻ.</li>
+      <li>🛠️ <strong>2. Cài đặt hệ điều hành và bản cập nhật mới nhất:</strong> Cập nhật thường xuyên giúp vá lỗ hổng bảo mật, bảo vệ thiết bị khỏi các mối đe dọa an ninh mạng mới.</li>
+      <li>🕵️ <strong>3. Kiểm tra bảo mật định kỳ:</strong> Dùng công cụ như Google Safe Browsing để phát hiện trang web hoặc tệp độc hại trước khi truy cập hay tải xuống.</li>
+      <li>🧿 <strong>4. Bảo mật tài khoản bằng khóa passkey:</strong> Passkey xác thực người dùng bằng sinh trắc học hoặc thiết bị bảo mật, giúp tăng cường bảo vệ tài khoản cá nhân.</li>
+      <li>⚙️ <strong>5. Xem lại cài đặt dữ liệu:</strong> Kiểm tra và giới hạn quyền truy cập dữ liệu của các ứng dụng và dịch vụ để bảo vệ thông tin cá nhân.</li>
+      <li>🚫 <strong>6. Cẩn thận với các email và tin nhắn lừa đảo:</strong> Không mở liên kết lạ hoặc cung cấp thông tin cá nhân khi nhận email hay tin nhắn đáng ngờ.</li>
+      <li>🙈 <strong>7. Tránh chia sẻ thông tin cá nhân nhạy cảm trên mạng xã hội:</strong> Không đăng tải địa chỉ, số điện thoại, thông tin tài chính hoặc những dữ liệu dễ bị lợi dụng.</li>
+      <li>📶 <strong>8. Sử dụng kết nối Wi-Fi an toàn:</strong> Tránh dùng Wi-Fi công cộng cho các giao dịch quan trọng, và nên dùng VPN để mã hóa dữ liệu nếu cần.</li>
     </ul>
-    
+
     <hr>
     
     <h3>📚 Một số cách để phòng tránh:</h3>
@@ -1459,7 +1463,13 @@ with tabs[4]:
       <li><a href="https://github.com/EbookFoundation/free-programming-books" target="_blank">Free Programming Books (GitHub)</a> – Hàng nghìn sách lập trình miễn phí, có cả tiếng Việt.</li>
       <li><a href="https://www.oreilly.com/" target="_blank">O'Reilly Online Learning</a> – Thư viện sách lập trình cao cấp (trả phí).</li>
     </ul>
-    
+
+    <h3>🛠️ Phần mềm thực hành tạo website lớp 12</h3>
+    <ul>
+      <li><a href="https://www.sublimetext.com" target="_blank">Hướng dẫn và cài đặt Sublime Text</a></li>
+      <li><a href="https://mobirise.com/" target="_blank">Link cài đặt Mobirise</a></li>
+    </ul>
+        
     <h3>🖥️ Một số trang web tự học</h3>
     <ul>
       <li><a href="https://hocmai.vn/" target="_blank">Học Mãi</a></li>
