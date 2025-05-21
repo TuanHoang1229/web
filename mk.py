@@ -301,16 +301,22 @@ with tabs[2]:
     </style>
 """, unsafe_allow_html=True)
 
-    q1 = st.radio("1. Thẻ nào dùng để tạo tiêu đề lớn nhất?", ["<p>", "<h1>", "<title>", "<div>"], key="web_q1")
-    q2 = st.radio("2. Thuộc tính nào để đổi màu chữ trong CSS?", ["font-size", "color", "background-color", "margin"], key="web_q2")
-    q3 = st.radio("3. Thẻ nào dùng để chèn hình ảnh vào trang web?", ["<a>", "<img>", "<picture>", "<div>"], key="web_q3")
-    q4 = st.radio("4. Trong CSS, thuộc tính `padding` dùng để làm gì?", ["Tạo khoảng cách bên trong phần tử", "Đổi màu nền", "Tạo đường viền", "Tăng cỡ chữ"], key="web_q4")
-    q5 = st.radio("5. Đoạn mã nào tạo liên kết đến Google?", [
+    st.markdown("<div style='font-size:18px; font-weight:600;'>1. Thẻ nào dùng để tạo tiêu đề lớn nhất?</div>", unsafe_allow_html=True)
+    q1 = st.radio("", ["<p>", "<h1>", "<title>", "<div>"], key="web_q1")
+    st.markdown("<div style='font-size:18px; font-weight:600;'>2. Thuộc tính nào để đổi màu chữ trong CSS?</div>", unsafe_allow_html=True)
+    q2 = st.radio("", ["font-size", "color", "background-color", "margin"], key="web_q2")
+    st.markdown("<div style='font-size:18px; font-weight:600;'>3. Thẻ nào dùng để chèn hình ảnh vào trang web?</div>", unsafe_allow_html=True)
+    q3 = st.radio("", ["<a>", "<img>", "<picture>", "<div>"], key="web_q3")
+    st.markdown("<div style='font-size:18px; font-weight:600;'>4. Trong CSS, thuộc tính <code>padding</code> dùng để làm gì?</div>", unsafe_allow_html=True)
+    q4 = st.radio("", ["Tạo khoảng cách bên trong phần tử", "Đổi màu nền", "Tạo đường viền", "Tăng cỡ chữ"], key="web_q4")
+    st.markdown("<div style='font-size:18px; font-weight:600;'>5. Đoạn mã nào tạo liên kết đến Google?</div>", unsafe_allow_html=True)
+    q5 = st.radio("", [
         "<link href='google.com'>Google</link>", 
         "<a>Google</a>", 
         "<a href='https://google.com'>Google</a>", 
         "<p href='google.com'>Google</p>"
-    ], key="web_q5")
+        ], key="web_q5")
+
 
     if st.button("✅ Nộp câu trả lời", key="submit_web_quiz"):
         score = 0
