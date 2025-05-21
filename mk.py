@@ -34,7 +34,7 @@ st.markdown("""
     <style>
         /* Tăng kích thước chữ của tiêu đề tab */
         button[data-baseweb="tab"] > div[data-testid="stMarkdownContainer"] > p {
-            font-size: 40px;
+            font-size: 20px;
         }
     </style>
     """, unsafe_allow_html=True)
